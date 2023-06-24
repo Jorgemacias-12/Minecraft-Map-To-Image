@@ -1,6 +1,6 @@
 ﻿namespace Minecraft_Map_Renderer
 {
-    partial class Form1
+    partial class MinecraftMapRendererForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // MinecraftMapRendererForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
+            this.Name = "MinecraftMapRendererForm";
             this.Text = "Minecraft Map To Image";
             this.ResumeLayout(false);
 

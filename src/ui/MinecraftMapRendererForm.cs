@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Minecraft_Map_Renderer
 {
-    public partial class Form1 : Form
+    public partial class MinecraftMapRendererForm : Form
     {
-        public Form1()
+        public MinecraftMapRendererForm()
         {
             InitializeComponent();
         }
