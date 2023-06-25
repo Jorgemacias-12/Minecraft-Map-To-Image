@@ -19,6 +19,15 @@ namespace Minecraft_Map_Renderer
         private const int WM_LPARAM = 0;
         #endregion
 
+        #region Form Constants
+        private const int TOOLBAR_WIDTH = 100;
+        private const int TOOLBAR_HEIGHT = 100;
+        #endregion
+
+        #region Form variables
+        private bool isMaximized = false;
+        #endregion
+
         public MinecraftMapRendererForm()
         {
             InitializeComponent();
@@ -60,18 +69,46 @@ namespace Minecraft_Map_Renderer
 
         private void Btn_resize_Click(object sender, EventArgs e)
         {
+            isMaximized = !isMaximized;
 
+            Size = HandleWindowResize();
         }
 
         private void Btn_minimize_Click(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Minimized;
         }
         #endregion
 
         #region FormLoad
         private void MinecraftMapRendererForm_Load(object sender, EventArgs e)
         {
+        }
+        #endregion
+
+        #region Ui Util Functions
+        private Size HandleWindowResize()
+        {
+            Rectangle WindowInitialSize;
+            Rectangle WindowMaximizedSize;
+
+            WindowInitialSize = Screen.PrimaryScreen.WorkingArea;
+            WindowMaximizedSize = Screen.FromControl(this).Bounds;
+            
+            Location = new Point(0, 0);
+
+            if (isMaximized)
+            {
+                return new Size(WindowMaximizedSize.Width, WindowInitialSize.Height);
+            }
+
+            if(!isMaximized)
+            {
+                return new Size(WindowMaximizedSize.Width - TOOLBAR_WIDTH,
+                                WindowMaximizedSize.Height - TOOLBAR_HEIGHT);
+            }
+
+            return new Size(0, 0);
         }
         #endregion
     }
