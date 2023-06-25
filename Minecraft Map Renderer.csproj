@@ -58,7 +58,9 @@
     <Compile Include="src\logic\MinecraftSave.cs" />
     <Compile Include="src\logic\MinecraftSaves.cs" />
     <Compile Include="src\logic\MinecraftSavesReader.cs" />
+    <Compile Include="src\logic\MinecraftVersion.cs" />
     <Compile Include="src\logic\MinecraftVersionReader.cs" />
+    <Compile Include="src\logic\MinecraftVersions.cs" />
     <Compile Include="src\ui\MinecraftMapRendererForm.cs">
       <SubType>Form</SubType>
     </Compile>

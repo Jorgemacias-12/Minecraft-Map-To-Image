@@ -1,5 +1,5 @@
-﻿using Minecraft_Map_Renderer.src.logic;
-using System;
+﻿using System;
+using Minecraft_Map_Renderer.src.logic;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,21 +21,20 @@ namespace Minecraft_Map_Renderer
         #endregion
 
         #region Form Constants
-        private const int TOOLBAR_WIDTH = 100;
-        private const int TOOLBAR_HEIGHT = 100;
+        Rectangle WindowInitialSize;
+        Rectangle WindowMaximizedSize;
         #endregion
 
         #region Form variables
         private bool isMaximized = false;
-        private Point NormalLocation;
-        private Point MaximizedLocation;
-
         #endregion
 
+        #region Form 
         public MinecraftMapRendererForm()
         {
             InitializeComponent();
         }
+        #endregion
         
         #region FormMouseMovement
 
@@ -87,31 +86,27 @@ namespace Minecraft_Map_Renderer
         #region FormLoad
         private void MinecraftMapRendererForm_Load(object sender, EventArgs e)
         {
-            MaximizedLocation = new Point(0,0);
-            NormalLocation = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2); ;
+            WindowInitialSize =  new Rectangle(Location.X, Location.Y, Width, Height);
+            WindowMaximizedSize = Screen.PrimaryScreen.WorkingArea;
+            MinecraftVersions MinecraftVersions = new MinecraftVersions();
+
+            MessageBox.Show(Convert.ToString(MinecraftVersions.Versions.Count));
         }
         #endregion
 
         #region Ui Util Functions
         private Size HandleWindowResize()
         {
-            Rectangle WindowInitialSize;
-            Rectangle WindowMaximizedSize;
-
-            WindowInitialSize = Screen.PrimaryScreen.WorkingArea;
-            WindowMaximizedSize = Screen.FromControl(this).Bounds;            
-
-            Location = isMaximized ? MaximizedLocation : NormalLocation;
-
             if (isMaximized)
             {
-                return new Size(WindowMaximizedSize.Width, WindowInitialSize.Height);
+                Location = new Point(0, 0);
+                return new Size(WindowMaximizedSize.Width, WindowMaximizedSize.Height);
             }
 
             if(!isMaximized)
             {
-                return new Size(MinimumSize.Width, MinimumSize.Height);
+                Location = new Point(WindowInitialSize.X, WindowInitialSize.Y);
+                return new Size(WindowInitialSize.Width, WindowInitialSize.Height);
             }
 
             return new Size(0, 0);
