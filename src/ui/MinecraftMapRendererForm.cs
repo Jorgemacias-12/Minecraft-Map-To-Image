@@ -26,6 +26,9 @@ namespace Minecraft_Map_Renderer
 
         #region Form variables
         private bool isMaximized = false;
+        private Point NormalLocation;
+        private Point MaximizedLocation;
+
         #endregion
 
         public MinecraftMapRendererForm()
@@ -83,6 +86,9 @@ namespace Minecraft_Map_Renderer
         #region FormLoad
         private void MinecraftMapRendererForm_Load(object sender, EventArgs e)
         {
+            MaximizedLocation = new Point(0,0);
+            NormalLocation = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2); ;
         }
         #endregion
 
@@ -93,9 +99,9 @@ namespace Minecraft_Map_Renderer
             Rectangle WindowMaximizedSize;
 
             WindowInitialSize = Screen.PrimaryScreen.WorkingArea;
-            WindowMaximizedSize = Screen.FromControl(this).Bounds;
-            
-            Location = new Point(0, 0);
+            WindowMaximizedSize = Screen.FromControl(this).Bounds;            
+
+            Location = isMaximized ? MaximizedLocation : NormalLocation;
 
             if (isMaximized)
             {
@@ -104,8 +110,7 @@ namespace Minecraft_Map_Renderer
 
             if(!isMaximized)
             {
-                return new Size(WindowMaximizedSize.Width - TOOLBAR_WIDTH,
-                                WindowMaximizedSize.Height - TOOLBAR_HEIGHT);
+                return new Size(MinimumSize.Width, MinimumSize.Height);
             }
 
             return new Size(0, 0);
