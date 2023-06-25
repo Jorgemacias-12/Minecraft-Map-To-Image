@@ -51,12 +51,14 @@
     <Compile Include="src\logic\MinecraftMap.cs" />
     <Compile Include="src\logic\MinecraftMapItemReader.cs" />
     <Compile Include="src\logic\MinecraftSavesReader.cs" />
+    <Compile Include="src\logic\MinecraftVersion.cs" />
     <Compile Include="src\logic\MinecraftVersionReader.cs" />
-    <Compile Include="src\ui\MinecraftMapRenderer.cs">
+    <Compile Include="src\logic\MinecraftVersions.cs" />
+    <Compile Include="src\ui\MinecraftMapRendererForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ui\MinecraftMapRenderer.Designer.cs">
-      <DependentUpon>MinecraftMapRenderer.cs</DependentUpon>
+    <Compile Include="src\ui\MinecraftMapRendererForm.Designer.cs">
+      <DependentUpon>MinecraftMapRendererForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,9 +68,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\ui\MinecraftMapRenderer.resx">
-      <DependentUpon>MinecraftMapRenderer.cs</DependentUpon>
+    <EmbeddedResource Include="src\ui\MinecraftMapRendererForm.resx">
+      <DependentUpon>MinecraftMapRendererForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -82,6 +85,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\resources\minus-solid.png" />
+    <Content Include="src\resources\window-maximize-solid.png" />
+    <Content Include="src\resources\window-restore-solid.png" />
+    <Content Include="src\resources\xmark-solid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
