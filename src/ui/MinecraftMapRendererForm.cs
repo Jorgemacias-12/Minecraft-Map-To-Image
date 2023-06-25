@@ -35,7 +35,7 @@ namespace Minecraft_Map_Renderer
             InitializeComponent();
         }
         #endregion
-
+        
         #region FormMouseMovement
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]

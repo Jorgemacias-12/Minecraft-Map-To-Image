@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="fNbt">
+      <HintPath>src\libraries\fNbt.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +55,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\logic\MinecraftMap.cs" />
     <Compile Include="src\logic\MinecraftMapItemReader.cs" />
+    <Compile Include="src\logic\MinecraftSave.cs" />
+    <Compile Include="src\logic\MinecraftSaves.cs" />
     <Compile Include="src\logic\MinecraftSavesReader.cs" />
     <Compile Include="src\logic\MinecraftVersion.cs" />
     <Compile Include="src\logic\MinecraftVersionReader.cs" />
@@ -73,6 +80,7 @@
     <EmbeddedResource Include="src\ui\MinecraftMapRendererForm.resx">
       <DependentUpon>MinecraftMapRendererForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
