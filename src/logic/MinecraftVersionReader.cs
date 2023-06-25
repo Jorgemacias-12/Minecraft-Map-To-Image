@@ -23,15 +23,22 @@ namespace Minecraft_Map_Renderer.src.logic
         #region Class Methods
         public void LoadMinecraftVersions(List<MinecraftVersion> MinecraftVersions)
         {
-            string[] MinecraftSaveVersions = Directory.GetDirectories(MINECRAFT_SAVES_VERSIONS_PATH);
-
-            foreach (string MinecraftSaveVersion in MinecraftSaveVersions)
+            try
             {
-                MinecraftVersion MinecraftVersion;
+                string[] MinecraftSaveVersions = Directory.GetDirectories(MINECRAFT_SAVES_VERSIONS_PATH);
 
-                MinecraftVersion = new MinecraftVersion(Path.GetFileName(MinecraftSaveVersion), MinecraftSaveVersion);
+                foreach (string MinecraftSaveVersion in MinecraftSaveVersions)
+                {
+                    MinecraftVersion MinecraftVersion;
 
-                MinecraftVersions.Add(MinecraftVersion);
+                    MinecraftVersion = new MinecraftVersion(Path.GetFileName(MinecraftSaveVersion), MinecraftSaveVersion);
+
+                    MinecraftVersions.Add(MinecraftVersion);
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
         #endregion

@@ -9,7 +9,7 @@ namespace Minecraft_Map_Renderer.src.logic
     public class MinecraftVersions
     {
         #region Class Variables
-        public static readonly List<MinecraftVersion> Versions = new List<MinecraftVersion>();
+        public readonly List<MinecraftVersion> Versions = new List<MinecraftVersion>();
         #endregion
 
         #region Class Constructor

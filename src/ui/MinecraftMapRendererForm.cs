@@ -88,6 +88,7 @@ namespace Minecraft_Map_Renderer
         {
             WindowInitialSize =  new Rectangle(Location.X, Location.Y, Width, Height);
             WindowMaximizedSize = Screen.PrimaryScreen.WorkingArea;
+            MinecraftVersions MinecraftVersions = new MinecraftVersions();
 
             MessageBox.Show(Convert.ToString(MinecraftVersions.Versions.Count));
         }
