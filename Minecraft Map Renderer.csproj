@@ -66,6 +66,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="src\ui\MinecraftMapRendererForm.resx">
       <DependentUpon>MinecraftMapRendererForm.cs</DependentUpon>
@@ -85,6 +86,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\resources\minus-solid.png" />
+    <Content Include="src\resources\window-maximize-solid.png" />
+    <Content Include="src\resources\window-restore-solid.png" />
+    <Content Include="src\resources\xmark-solid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
