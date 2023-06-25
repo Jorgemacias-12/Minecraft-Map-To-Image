@@ -1,4 +1,5 @@
 ﻿using System;
+using Minecraft_Map_Renderer.src.logic;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,11 +29,13 @@ namespace Minecraft_Map_Renderer
         private bool isMaximized = false;
         #endregion
 
+        #region Form 
         public MinecraftMapRendererForm()
         {
             InitializeComponent();
         }
-        
+        #endregion
+
         #region FormMouseMovement
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
@@ -85,6 +88,8 @@ namespace Minecraft_Map_Renderer
         {
             WindowInitialSize =  new Rectangle(Location.X, Location.Y, Width, Height);
             WindowMaximizedSize = Screen.PrimaryScreen.WorkingArea;
+
+            MessageBox.Show(Convert.ToString(MinecraftVersions.Versions.Count));
         }
         #endregion
 
