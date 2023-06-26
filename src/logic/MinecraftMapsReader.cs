@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Minecraft_Map_Renderer.src.logic
 {
-    public class MinecraftMapReader
+    public class MinecraftMapsReader
     {
     }
 }
