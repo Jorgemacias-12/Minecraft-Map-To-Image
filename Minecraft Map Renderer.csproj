@@ -54,7 +54,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\logic\MinecraftMap.cs" />
-    <Compile Include="src\logic\MinecraftMapItemReader.cs" />
+    <Compile Include="src\logic\MinecraftMapsReader.cs" />
+    <Compile Include="src\logic\MinecraftMaps.cs" />
     <Compile Include="src\logic\MinecraftSave.cs" />
     <Compile Include="src\logic\MinecraftSaves.cs" />
     <Compile Include="src\logic\MinecraftSavesReader.cs" />
@@ -95,6 +96,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\ui\components\" />
     <Folder Include="src\utils\" />
   </ItemGroup>
   <ItemGroup>
