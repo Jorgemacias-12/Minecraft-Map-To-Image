@@ -97,19 +97,15 @@ namespace Minecraft_Map_Renderer
         #region Ui Util Functions
         private Size HandleWindowResize()
         {
-            if (isMaximized)
-            {
-                Location = new Point(0, 0);
-                return new Size(WindowMaximizedSize.Width, WindowMaximizedSize.Height);
-            }
+            Size _;
 
-            if(!isMaximized)
-            {
-                Location = new Point(WindowInitialSize.X, WindowInitialSize.Y);
-                return new Size(WindowInitialSize.Width, WindowInitialSize.Height);
-            }
+            _ = isMaximized ? new Size(WindowMaximizedSize.Width, WindowMaximizedSize.Height)
+                            : new Size(WindowInitialSize.Width, WindowInitialSize.Height);
 
-            return new Size(0, 0);
+            Location = isMaximized ? new Point(0, 0)
+                                   : new Point(WindowInitialSize.X, WindowInitialSize.Y);
+
+            return _;
         }
         #endregion
     }
