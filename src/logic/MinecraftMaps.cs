@@ -9,8 +9,8 @@ namespace Minecraft_Map_Renderer.src.logic
     public class MinecraftMaps
     {
         #region Class Variables
-        public readonly List<MinecraftMap> Maps = new List<MinecraftMap>();
-        private MinecraftMapsReader MapsReader;
+        public readonly Dictionary<string, List<MinecraftMap>> Maps = new Dictionary<string, List<MinecraftMap>>();
+        private readonly MinecraftMapsReader MapsReader;
 
         public MinecraftMaps()
         {

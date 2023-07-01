@@ -27,7 +27,7 @@ namespace Minecraft_Map_Renderer.src.logic
 
         #region Class Methods
 
-        public void LoadMaps(List<MinecraftMap> Maps)
+        public void LoadMaps(Dictionary<string, List<MinecraftMap>> Maps)
         {
             MinecraftSaves MS = new MinecraftSaves();
 
@@ -59,7 +59,20 @@ namespace Minecraft_Map_Renderer.src.logic
                                            ReadColors(),
                                            Path.GetFileNameWithoutExtension(MinecraftMapPath));
 
-                    Maps.Add(Map);
+                    if (Maps.ContainsKey(Save.SaveName))
+                    {
+                        Maps[Save.SaveName].Add(Map);
+                    }
+
+                    if (!Maps.ContainsKey(Save.SaveName))
+                    {
+                        List<MinecraftMap> MapList = new List<MinecraftMap>();
+                        
+                        MapList.Add(Map);
+
+                        Maps.Add(Save.SaveName, MapList);
+                    }
+
                 }
             }
         }
