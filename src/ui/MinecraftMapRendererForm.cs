@@ -99,7 +99,6 @@ namespace Minecraft_Map_Renderer
             Size _;
 
             WindowMaximizedSize = Screen.FromHandle(this.Handle);
-            //WindowMaximizedSize = Screen.FromRectangle(Bounds).Bounds;
 
             _ = isMaximized ? new Size(WindowMaximizedSize.WorkingArea.Width, WindowMaximizedSize.WorkingArea.Height)
                             : new Size(WindowInitialSize.Width, WindowInitialSize.Height);
