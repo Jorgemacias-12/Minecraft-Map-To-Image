@@ -22,7 +22,7 @@ namespace Minecraft_Map_Renderer
 
         #region Form Constants
         Rectangle WindowInitialSize;
-        Rectangle WindowMaximizedSize;
+        Screen WindowMaximizedSize;
         #endregion
 
         #region Form variables
@@ -97,19 +97,21 @@ namespace Minecraft_Map_Renderer
         private Size HandleWindowResize()
         {
             Size _;
-            
-            WindowMaximizedSize = Screen.FromRectangle(Bounds).WorkingArea;
 
-            _ = isMaximized ? new Size(WindowMaximizedSize.Width, WindowMaximizedSize.Height)
+            WindowMaximizedSize = Screen.FromHandle(this.Handle);
+            //WindowMaximizedSize = Screen.FromRectangle(Bounds).Bounds;
+
+            _ = isMaximized ? new Size(WindowMaximizedSize.WorkingArea.Width, WindowMaximizedSize.WorkingArea.Height)
                             : new Size(WindowInitialSize.Width, WindowInitialSize.Height);
 
             if (!isMaximized)
             {
-                Location = new Point((WindowMaximizedSize.Width - WindowInitialSize.Width)/2, (WindowMaximizedSize.Height - WindowInitialSize.Height)/2);
+                Location = new Point(WindowMaximizedSize.WorkingArea.Left + (WindowMaximizedSize.WorkingArea.Width - WindowInitialSize.Width)/2, 
+                                     WindowMaximizedSize.WorkingArea.Top + (WindowMaximizedSize.WorkingArea.Height - WindowInitialSize.Height)/2);
             }
             else
             {
-                Location = new Point(WindowMaximizedSize.X, WindowMaximizedSize.Y);
+                Location = new Point(WindowMaximizedSize.WorkingArea.X, WindowMaximizedSize.WorkingArea.Y);
             }
 
             //Location = isMaximized ? new Point(0, 0)
@@ -118,5 +120,13 @@ namespace Minecraft_Map_Renderer
             return _;
         }
         #endregion
+
+        private void MinecraftMapRendererForm_SizeChanged(object sender, EventArgs e)
+        {
+            if (isMaximized)
+            {
+               
+            }
+        }
     }
 }

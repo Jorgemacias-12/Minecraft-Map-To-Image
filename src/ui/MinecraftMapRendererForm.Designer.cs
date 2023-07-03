@@ -30,10 +30,10 @@
         {
             this.Pnl_Topbar = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.Lbl_Title = new System.Windows.Forms.Label();
             this.Btn_minimize = new System.Windows.Forms.Button();
             this.Btn_resize = new System.Windows.Forms.Button();
             this.Btn_exit = new System.Windows.Forms.Button();
+            this.Lbl_Title = new System.Windows.Forms.Label();
             this.Pnl_Topbar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             this.Pnl_Topbar.Controls.Add(this.Lbl_Title);
             this.Pnl_Topbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_Topbar.Location = new System.Drawing.Point(0, 0);
-            this.Pnl_Topbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Pnl_Topbar.Margin = new System.Windows.Forms.Padding(4);
             this.Pnl_Topbar.Name = "Pnl_Topbar";
             this.Pnl_Topbar.Size = new System.Drawing.Size(1000, 50);
             this.Pnl_Topbar.TabIndex = 0;
@@ -68,19 +68,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(250, 50);
             this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // Lbl_Title
-            // 
-            this.Lbl_Title.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Lbl_Title.Location = new System.Drawing.Point(0, 0);
-            this.Lbl_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Lbl_Title.Name = "Lbl_Title";
-            this.Lbl_Title.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.Lbl_Title.Size = new System.Drawing.Size(328, 50);
-            this.Lbl_Title.TabIndex = 0;
-            this.Lbl_Title.Text = "Minecraft Map To Image";
-            this.Lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lbl_Title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Lbl_Title_MouseMove);
             // 
             // Btn_minimize
             // 
@@ -130,6 +117,19 @@
             this.Btn_exit.UseVisualStyleBackColor = true;
             this.Btn_exit.Click += new System.EventHandler(this.Btn_exit_Click);
             // 
+            // Lbl_Title
+            // 
+            this.Lbl_Title.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Lbl_Title.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Lbl_Title.Name = "Lbl_Title";
+            this.Lbl_Title.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Lbl_Title.Size = new System.Drawing.Size(328, 50);
+            this.Lbl_Title.TabIndex = 0;
+            this.Lbl_Title.Text = "Minecraft Map To Image";
+            this.Lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_Title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Lbl_Title_MouseMove);
+            // 
             // MinecraftMapRendererForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -143,12 +143,13 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.MinimumSize = new System.Drawing.Size(1000, 750);
             this.Name = "MinecraftMapRendererForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Minecraft Map To Image";
             this.Load += new System.EventHandler(this.MinecraftMapRendererForm_Load);
+            this.SizeChanged += new System.EventHandler(this.MinecraftMapRendererForm_SizeChanged);
             this.Pnl_Topbar.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
