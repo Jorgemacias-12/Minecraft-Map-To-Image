@@ -87,7 +87,6 @@ namespace Minecraft_Map_Renderer
         private void MinecraftMapRendererForm_Load(object sender, EventArgs e)
         {
             WindowInitialSize =  new Rectangle(Location.X, Location.Y, Width, Height);
-            WindowMaximizedSize = Screen.PrimaryScreen.WorkingArea;
             MinecraftVersions MinecraftVersions = new MinecraftVersions();
 
             MessageBox.Show(Convert.ToString(MinecraftVersions.Versions.Count));
@@ -97,19 +96,26 @@ namespace Minecraft_Map_Renderer
         #region Ui Util Functions
         private Size HandleWindowResize()
         {
-            if (isMaximized)
+            Size _;
+            
+            WindowMaximizedSize = Screen.FromRectangle(Bounds).WorkingArea;
+
+            _ = isMaximized ? new Size(WindowMaximizedSize.Width, WindowMaximizedSize.Height)
+                            : new Size(WindowInitialSize.Width, WindowInitialSize.Height);
+
+            if (!isMaximized)
             {
-                Location = new Point(0, 0);
-                return new Size(WindowMaximizedSize.Width, WindowMaximizedSize.Height);
+                Location = new Point((WindowMaximizedSize.Width - WindowInitialSize.Width)/2, (WindowMaximizedSize.Height - WindowInitialSize.Height)/2);
+            }
+            else
+            {
+                Location = new Point(WindowMaximizedSize.X, WindowMaximizedSize.Y);
             }
 
-            if(!isMaximized)
-            {
-                Location = new Point(WindowInitialSize.X, WindowInitialSize.Y);
-                return new Size(WindowInitialSize.Width, WindowInitialSize.Height);
-            }
+            //Location = isMaximized ? new Point(0, 0)
+              //                     : new Point(WindowInitialSize.X, WindowInitialSize.Y);
 
-            return new Size(0, 0);
+            return _;
         }
         #endregion
     }
