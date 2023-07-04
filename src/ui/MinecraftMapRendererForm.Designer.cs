@@ -149,7 +149,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Minecraft Map To Image";
             this.Load += new System.EventHandler(this.MinecraftMapRendererForm_Load);
-            this.SizeChanged += new System.EventHandler(this.MinecraftMapRendererForm_SizeChanged);
+            this.Move += new System.EventHandler(this.MinecraftMapRendererForm_Move);
             this.Pnl_Topbar.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

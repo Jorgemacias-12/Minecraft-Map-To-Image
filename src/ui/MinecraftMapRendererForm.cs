@@ -88,8 +88,6 @@ namespace Minecraft_Map_Renderer
         {
             WindowInitialSize =  new Rectangle(Location.X, Location.Y, Width, Height);
             MinecraftVersions MinecraftVersions = new MinecraftVersions();
-
-            MessageBox.Show(Convert.ToString(MinecraftVersions.Versions.Count));
         }
         #endregion
 
@@ -98,15 +96,13 @@ namespace Minecraft_Map_Renderer
         {
             Size _;
 
-            WindowMaximizedSize = Screen.FromHandle(this.Handle);
-
             _ = isMaximized ? new Size(WindowMaximizedSize.WorkingArea.Width, WindowMaximizedSize.WorkingArea.Height)
                             : new Size(WindowInitialSize.Width, WindowInitialSize.Height);
 
             if (!isMaximized)
             {
-                Location = new Point(WindowMaximizedSize.WorkingArea.Left + (WindowMaximizedSize.WorkingArea.Width - WindowInitialSize.Width)/2, 
-                                     WindowMaximizedSize.WorkingArea.Top + (WindowMaximizedSize.WorkingArea.Height - WindowInitialSize.Height)/2);
+                Location = new Point((WindowMaximizedSize.WorkingArea.Width - WindowInitialSize.Width)/2, 
+                                     (WindowMaximizedSize.WorkingArea.Height - WindowInitialSize.Height)/2);
             }
             else
             {
@@ -120,12 +116,13 @@ namespace Minecraft_Map_Renderer
         }
         #endregion
 
-        private void MinecraftMapRendererForm_SizeChanged(object sender, EventArgs e)
+        private void MinecraftMapRendererForm_Move(object sender, EventArgs e)
         {
-            if (isMaximized)
+            if (WindowMaximizedSize != Screen.FromControl(this))
             {
-               
-            }
+                WindowMaximizedSize = Screen.FromControl(this);
+            }       
+
         }
     }
 }
