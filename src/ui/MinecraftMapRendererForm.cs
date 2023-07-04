@@ -96,12 +96,14 @@ namespace Minecraft_Map_Renderer
         {
             Size _;
 
+            //WindowMaximizedSize = Screen.FromHandle(this.Handle);
+
             _ = isMaximized ? new Size(WindowMaximizedSize.WorkingArea.Width, WindowMaximizedSize.WorkingArea.Height)
                             : new Size(WindowInitialSize.Width, WindowInitialSize.Height);
 
             if (!isMaximized)
             {
-                Location = new Point((WindowMaximizedSize.WorkingArea.Width - WindowInitialSize.Width)/2, 
+                Location = new Point(WindowMaximizedSize.WorkingArea.Left + (WindowMaximizedSize.WorkingArea.Width - WindowInitialSize.Width)/2, 
                                      (WindowMaximizedSize.WorkingArea.Height - WindowInitialSize.Height)/2);
             }
             else
