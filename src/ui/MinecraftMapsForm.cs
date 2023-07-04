@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Minecraft_Map_Renderer
 {
-    public partial class MinecraftMapRendererForm : Form
+    public partial class MinecraftMapsForm : Form
     {
         #region InteropConstants
         private const int WM_SYSCOMMAND = 0x112;
@@ -27,10 +27,11 @@ namespace Minecraft_Map_Renderer
 
         #region Form variables
         private bool isMaximized = false;
+        private Screen ActualScreen;
         #endregion
 
         #region Form 
-        public MinecraftMapRendererForm()
+        public MinecraftMapsForm()
         {
             InitializeComponent();
         }
@@ -73,6 +74,8 @@ namespace Minecraft_Map_Renderer
         private void Btn_resize_Click(object sender, EventArgs e)
         {
             isMaximized = !isMaximized;
+            WindowInitialSize.X = Location.X;
+            WindowInitialSize.Y = Location.Y;   
 
             Size = HandleWindowResize();
         }
@@ -86,24 +89,35 @@ namespace Minecraft_Map_Renderer
         #region FormLoad
         private void MinecraftMapRendererForm_Load(object sender, EventArgs e)
         {
-            WindowInitialSize =  new Rectangle(Location.X, Location.Y, Width, Height);
-            WindowMaximizedSize = Screen.PrimaryScreen.WorkingArea;
-            MinecraftVersions MinecraftVersions = new MinecraftVersions();
+            WindowInitialSize = new Rectangle(Location.X, Location.Y, Width, Height);
 
-            MessageBox.Show(Convert.ToString(MinecraftVersions.Versions.Count));
+            Dashboard.ButtonClicked += Dashboard_ButtonClicked;
         }
+
+        private void Dashboard_ButtonClicked(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            MapsView.Save = btn.Text;
+        }
+
         #endregion
 
         #region Ui Util Functions
         private Size HandleWindowResize()
         {
+            
+            ActualScreen = Screen.FromControl(this);
+            WindowMaximizedSize = ActualScreen.WorkingArea;
+
             Size _;
 
             _ = isMaximized ? new Size(WindowMaximizedSize.Width, WindowMaximizedSize.Height)
                             : new Size(WindowInitialSize.Width, WindowInitialSize.Height);
 
-            Location = isMaximized ? new Point(0, 0)
+            Location = isMaximized ? new Point(ActualScreen.Bounds.X, ActualScreen.Bounds.Y)
                                    : new Point(WindowInitialSize.X, WindowInitialSize.Y);
+
 
             return _;
         }
