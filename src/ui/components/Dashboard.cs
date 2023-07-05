@@ -85,5 +85,16 @@ namespace Minecraft_Map_Renderer.src.ui.components
                 control.Width = Flp_SavesContainer.Width - 45;
             }
         }
+
+        private async void BtnReload_Click(object sender, EventArgs e)
+        {
+            // Reload Maps and saves
+            await MinecraftSaves.Instance.ReadSaves();
+        }
+
+        private void Btn_config_Click(object sender, EventArgs e)
+        {
+            // Open config form
+        }
     }
 }

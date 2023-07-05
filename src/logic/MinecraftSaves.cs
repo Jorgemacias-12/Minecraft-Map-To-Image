@@ -37,6 +37,11 @@ namespace Minecraft_Map_Renderer.src.logic
 
         public async Task ReadSaves()
         {
+            if (Saves.Count != 0)
+            {
+                Saves.Clear();
+            } 
+
             await _Reader.LoadSaves(Saves);
         }
 

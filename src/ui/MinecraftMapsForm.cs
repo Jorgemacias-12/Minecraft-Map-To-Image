@@ -99,6 +99,8 @@ namespace Minecraft_Map_Renderer
             Button btn = (Button)sender;
 
             MapsView.Save = btn.Text;
+
+            
         }
 
         #endregion
