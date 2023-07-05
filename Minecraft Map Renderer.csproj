@@ -54,9 +54,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\logic\MinecraftMap.cs" />
+    <Compile Include="src\logic\MinecraftMapReader.cs" />
     <Compile Include="src\logic\MinecraftMapRenderer.cs" />
-    <Compile Include="src\logic\MinecraftMapsReader.cs" />
-    <Compile Include="src\logic\MinecraftMaps.cs" />
     <Compile Include="src\logic\MinecraftSave.cs" />
     <Compile Include="src\logic\MinecraftSaves.cs" />
     <Compile Include="src\logic\MinecraftSavesReader.cs" />

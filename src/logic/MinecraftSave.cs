@@ -9,30 +9,26 @@ namespace Minecraft_Map_Renderer.src.logic
 {
     public class MinecraftSave
     {
-        #region Class Variables
-
-        /*
-         * To read the SaveVersion from a Minecraft Save I need to 
-         * go to the level.dat file and read the Version object,
-         * and access to the Name property
-         */
-        public string Version { get; set; } 
         public string Name { get; set; }
         public string Path { get; set; }
-        public Image SplashImage { get; set; }
+        public string Version { get; set; } 
+        public Image SplashIcon { get; set; } 
+        public bool HasMaps { get; set; }
 
-        #endregion
+        public List<MinecraftMap> Maps = new List<MinecraftMap>();
 
-
-        #region Class Constructor
-        public MinecraftSave(string saveVersion, string saveName, string savePath, Image saveSplashImage)
+        public MinecraftSave(string name, 
+                             string path, 
+                             string version,
+                             Image splashIcon, 
+                             List<MinecraftMap> maps)
         {
-            Version = saveVersion;
-            Name = saveName;
-            Path = savePath;
-            SplashImage = saveSplashImage;
+            Name = name;
+            Path = path;
+            SplashIcon = splashIcon;
+            Maps = maps;
+            Version = version;
         }
 
-        #endregion
     }
 }

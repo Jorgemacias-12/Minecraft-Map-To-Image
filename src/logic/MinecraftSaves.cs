@@ -8,18 +8,37 @@ namespace Minecraft_Map_Renderer.src.logic
 {
     public class MinecraftSaves
     {
-        #region Class Variables
+        private static MinecraftSaves _Instance;
+        private static readonly object _Lock = new object();
+        private MinecraftSavesReader _Reader;
         
-        public readonly List<MinecraftSave> Saves = new List<MinecraftSave>();
-        private MinecraftSavesReader SavesReader;
-        
-        #endregion
-        
-        public MinecraftSaves()
-        {
-            SavesReader = new MinecraftSavesReader();
+        public List<MinecraftSave> Saves { get; set; } = new List<MinecraftSave>();
 
-            SavesReader.LoadSaves(Saves);
+        private MinecraftSaves() 
+        { 
+            _Reader = new MinecraftSavesReader();
         }
+
+        public static MinecraftSaves Instance
+        {
+            get
+            {
+                if (_Instance == null)
+                {
+                    lock (_Lock)
+                    {
+                        _Instance = new MinecraftSaves();
+                    }
+                }
+
+                return _Instance;
+            }
+        }
+
+        public async Task ReadSaves()
+        {
+            await _Reader.LoadSaves(Saves);
+        }
+
     }
 }

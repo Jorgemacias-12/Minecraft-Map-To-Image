@@ -170,7 +170,6 @@
             // 
             this.MapsView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MapsView.Location = new System.Drawing.Point(0, 0);
-            this.MapsView.Maps = null;
             this.MapsView.Name = "MapsView";
             this.MapsView.Size = new System.Drawing.Size(524, 552);
             this.MapsView.TabIndex = 0;

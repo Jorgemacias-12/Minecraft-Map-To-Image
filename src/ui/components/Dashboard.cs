@@ -14,7 +14,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
     public partial class Dashboard : UserControl
     {
         #region Class Variables
-        private readonly MinecraftSaves MinecraftSaves = new MinecraftSaves();
+        private readonly MinecraftSaves minecraftSaves = MinecraftSaves.Instance;
         public event EventHandler<EventArgs> ButtonClicked;
         #endregion
 
@@ -28,11 +28,13 @@ namespace Minecraft_Map_Renderer.src.ui.components
             InitializeComponent();
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
+        private async void Dashboard_Load(object sender, EventArgs e)
         {
-            foreach(MinecraftSave Save in MinecraftSaves.Saves)
+            await MinecraftSaves.Instance.ReadSaves();
+
+            foreach(MinecraftSave Save in minecraftSaves.Saves)
             {
-                MinecraftSaveView view = new MinecraftSaveView(Save.SaveSplashImage, Save.SaveName)
+                MinecraftSaveView view = new MinecraftSaveView(Save.SplashIcon, Save.Name)
                 {
                     Width = Flp_SavesContainer.Width - 45,
                     Height = 64,

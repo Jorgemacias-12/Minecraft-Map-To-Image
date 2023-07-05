@@ -6,49 +6,55 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Minecraft_Map_Renderer.src.logic
 {
     public class MinecraftSavesReader
     {
-        #region Class Variables
-        #endregion
-
-        #region Class Constants 
+        private MinecraftSaves MSaves;
+        private MinecraftSave Save;
+        private MinecraftMapReader MapsReader;
         private readonly static string APPDATA_PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         private readonly static string MINECRAFT_SAVES_PATH = Path.Combine(APPDATA_PATH, ".minecraft", "saves");
-        #endregion
-
-        #region Class Constructor
+    
         public MinecraftSavesReader()
         {
 
         }
-        #endregion
 
-
-        #region Class Methods
-
-        public void LoadSaves(List<MinecraftSave> MinecraftSavesList)
+        public async Task LoadSaves(List<MinecraftSave> Saves)
         {
-            string[] MinecraftSavesPath = Directory.GetDirectories(MINECRAFT_SAVES_PATH);
+            MapsReader = new MinecraftMapReader();
 
-            foreach (string MinecraftSavePath in MinecraftSavesPath)
+            try
             {
-                MinecraftSave minecraftSave = new MinecraftSave(
-                    ReadSaveVersion(MinecraftSavePath),
-                    Path.GetFileName(MinecraftSavePath),
-                    MinecraftSavePath,
-                    ReadSaveSplashImage(MinecraftSavePath)
-                );
+                string[] MinecraftSavesPath = await Task.Run(() => Directory.GetDirectories(MINECRAFT_SAVES_PATH));
 
-                MinecraftSavesList.Add(minecraftSave);
+                MSaves = MinecraftSaves.Instance;
+
+                foreach(string MinecraftSavePath in MinecraftSavesPath)
+                {
+                    Save = new MinecraftSave(Path.GetFileName(MinecraftSavePath),
+                                             MinecraftSavePath,
+                                             ReadVersion(MinecraftSavePath),
+                                             ReadSplashIcon(MinecraftSavePath), null);
+                    // Read maps here
+                    Save.Maps = await MapsReader.LoadMaps(MinecraftSavePath);
+                    
+                    Saves.Add(Save);
+
+                    Save.HasMaps = true;
+                }
+
+            }
+
+            catch(FileNotFoundException)
+            {
+                Save.HasMaps = false;
             }
         }
 
-
-        private string ReadSaveVersion(string MinecraftSavePath)
+        private string ReadVersion(string MinecraftSavePath)
         {
             string LevelDatPath = Path.Combine(MinecraftSavePath, "level.dat");
 
@@ -73,10 +79,9 @@ namespace Minecraft_Map_Renderer.src.logic
             return "";
         }
 
-        private Image ReadSaveSplashImage(string MinecraftSavePath)
+        private Image ReadSplashIcon(string MinecraftSavePath)
         {
             return Image.FromFile($"{MinecraftSavePath}\\icon.png");
         }
-        #endregion
     }
 }

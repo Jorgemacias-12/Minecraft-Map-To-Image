@@ -11,14 +11,8 @@ namespace Minecraft_Map_Renderer.src.ui.components
 {
     public class MinecraftMapsView : FlowLayoutPanel
     {
-        private MinecraftMaps MinecraftMaps = MinecraftMaps.Instance;
         private event EventHandler<EventArgs> MapSelected;
-        private bool HasMaps;
-
-        public List<MinecraftMap> Maps
-        {
-            get; set;
-        }
+        private MinecraftSaves minecraftSaves = MinecraftSaves.Instance;
 
         private string _Save;
 
@@ -36,7 +30,6 @@ namespace Minecraft_Map_Renderer.src.ui.components
         {
             AutoScroll = true;
             Padding = new Padding(20);
-
         }
 
         private void HandleLoadMinecraftMaps()
@@ -45,22 +38,22 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
             if (Save == "") return;
 
-            List<MinecraftMap> MapList;
-
-            HasMaps = MinecraftMaps.Maps.TryGetValue(Save, out MapList);
-
-            if (!HasMaps) return;
-
-            foreach (MinecraftMap map in MapList) 
+            foreach(MinecraftSave Save in minecraftSaves.Saves)
             {
-                MinecraftMapCard MapCard = new MinecraftMapCard(map.Name, map.Colors)
-                {
-                    Width = 128,
-                    Height = 128,
-                    BackColor = Color.FromArgb(52, 58, 64),
-                };
+                if (Save.Name != _Save) continue;
 
-                Controls.Add(MapCard);
+                foreach(MinecraftMap map in Save.Maps)
+                {
+
+                    MinecraftMapCard MapCard = new MinecraftMapCard(map.Name, map.Colors)
+                    {
+                        Width = 128,
+                        Height = 128,
+                        BackColor = Color.FromArgb(52, 58, 64),
+                    };
+
+                    Controls.Add(MapCard);
+                }
             }
         }
 
