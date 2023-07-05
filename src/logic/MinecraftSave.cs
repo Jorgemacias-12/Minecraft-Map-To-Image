@@ -16,10 +16,10 @@ namespace Minecraft_Map_Renderer.src.logic
          * go to the level.dat file and read the Version object,
          * and access to the Name property
          */
-        public string SaveVersion { get; set; } 
-        public string SaveName { get; set; }
-        public string SavePath { get; set; }
-        public Image SaveSplashImage { get; set; }
+        public string Version { get; set; } 
+        public string Name { get; set; }
+        public string Path { get; set; }
+        public Image SplashImage { get; set; }
 
         #endregion
 
@@ -27,10 +27,10 @@ namespace Minecraft_Map_Renderer.src.logic
         #region Class Constructor
         public MinecraftSave(string saveVersion, string saveName, string savePath, Image saveSplashImage)
         {
-            SaveVersion = saveVersion;
-            SaveName = saveName;
-            SavePath = savePath;
-            SaveSplashImage = saveSplashImage;
+            Version = saveVersion;
+            Name = saveName;
+            Path = savePath;
+            SplashImage = saveSplashImage;
         }
 
         #endregion
