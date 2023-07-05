@@ -30,9 +30,14 @@ namespace Minecraft_Map_Renderer.src.logic
 
         #region Class Methods
 
-        public void LoadSaves(List<MinecraftSave> MinecraftSavesList)
+        public async Task LoadSaves(List<MinecraftSave> MinecraftSavesList)
         {
-            string[] MinecraftSavesPath = Directory.GetDirectories(MINECRAFT_SAVES_PATH);
+            if (!Directory.Exists(MINECRAFT_SAVES_PATH))
+            {
+                throw new FileNotFoundException("Minecraft path not found");
+            }
+
+            string[] MinecraftSavesPath = await Task.Run(() => Directory.GetDirectories(MINECRAFT_SAVES_PATH));
 
             foreach (string MinecraftSavePath in MinecraftSavesPath)
             {

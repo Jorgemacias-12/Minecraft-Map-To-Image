@@ -11,7 +11,6 @@ namespace Minecraft_Map_Renderer.src.logic
     public class MinecraftMapsReader
     {
         #region Class Variables 
-        private readonly MinecraftSaves MinecraftSaves;
         private NbtFile MapFile;
         private NbtCompound Root;
         private NbtCompound Data;
@@ -27,13 +26,15 @@ namespace Minecraft_Map_Renderer.src.logic
 
         #region Class Methods
 
-        public void LoadMaps(Dictionary<string, List<MinecraftMap>> Maps)
+        public async Task LoadMaps(Dictionary<string, List<MinecraftMap>> Maps)
         {
-            MinecraftSaves MS = new MinecraftSaves();
+            MinecraftSaves MS = MinecraftSaves.Instance;
+
+            await MS.ReadSavesAsync();
 
             MinecraftMap Map;
 
-            foreach(MinecraftSave Save in MS.Saves)
+            foreach(MinecraftSave Save in MinecraftSaves.Instance.Saves)
             {
                 string MinecraftMapDataPath = Path.Combine(Save.SavePath, "data");
 
@@ -66,9 +67,10 @@ namespace Minecraft_Map_Renderer.src.logic
 
                     if (!Maps.ContainsKey(Save.SaveName))
                     {
-                        List<MinecraftMap> MapList = new List<MinecraftMap>();
-                        
-                        MapList.Add(Map);
+                        List<MinecraftMap> MapList = new List<MinecraftMap>
+                        {
+                            Map
+                        };
 
                         Maps.Add(Save.SaveName, MapList);
                     }
