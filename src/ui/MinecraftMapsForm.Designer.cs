@@ -1,6 +1,6 @@
 ﻿namespace Minecraft_Map_Renderer
 {
-    partial class MinecraftMapRendererForm
+    partial class MinecraftMapsForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -34,8 +34,15 @@
             this.Btn_resize = new System.Windows.Forms.Button();
             this.Btn_exit = new System.Windows.Forms.Button();
             this.Lbl_Title = new System.Windows.Forms.Label();
+            this.Sc_MainContainer = new System.Windows.Forms.SplitContainer();
+            this.Dashboard = new Minecraft_Map_Renderer.src.ui.components.Dashboard();
+            this.MapsView = new Minecraft_Map_Renderer.src.ui.components.MinecraftMapsView();
             this.Pnl_Topbar.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Sc_MainContainer)).BeginInit();
+            this.Sc_MainContainer.Panel1.SuspendLayout();
+            this.Sc_MainContainer.Panel2.SuspendLayout();
+            this.Sc_MainContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_Topbar
@@ -130,14 +137,53 @@
             this.Lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Lbl_Title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Lbl_Title_MouseMove);
             // 
+            // Sc_MainContainer
+            // 
+            this.Sc_MainContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.Sc_MainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Sc_MainContainer.Location = new System.Drawing.Point(0, 48);
+            this.Sc_MainContainer.Name = "Sc_MainContainer";
+            // 
+            // Sc_MainContainer.Panel1
+            // 
+            this.Sc_MainContainer.Panel1.Controls.Add(this.Dashboard);
+            // 
+            // Sc_MainContainer.Panel2
+            // 
+            this.Sc_MainContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.Sc_MainContainer.Panel2.Controls.Add(this.MapsView);
+            this.Sc_MainContainer.Size = new System.Drawing.Size(800, 552);
+            this.Sc_MainContainer.SplitterDistance = 266;
+            this.Sc_MainContainer.SplitterWidth = 10;
+            this.Sc_MainContainer.TabIndex = 1;
+            // 
+            // Dashboard
+            // 
+            this.Dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.Dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Dashboard.Location = new System.Drawing.Point(0, 0);
+            this.Dashboard.Name = "Dashboard";
+            this.Dashboard.Size = new System.Drawing.Size(266, 552);
+            this.Dashboard.TabIndex = 0;
+            // 
+            // MapsView
+            // 
+            this.MapsView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MapsView.Location = new System.Drawing.Point(0, 0);
+            this.MapsView.Maps = null;
+            this.MapsView.Name = "MapsView";
+            this.MapsView.Size = new System.Drawing.Size(524, 552);
+            this.MapsView.TabIndex = 0;
+            // 
             // MinecraftMapRendererForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1000, 750);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.Sc_MainContainer);
             this.Controls.Add(this.Pnl_Topbar);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,6 +198,10 @@
             this.Move += new System.EventHandler(this.MinecraftMapRendererForm_Move);
             this.Pnl_Topbar.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.Sc_MainContainer.Panel1.ResumeLayout(false);
+            this.Sc_MainContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Sc_MainContainer)).EndInit();
+            this.Sc_MainContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -164,6 +214,9 @@
         private System.Windows.Forms.Button Btn_minimize;
         private System.Windows.Forms.Button Btn_resize;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.SplitContainer Sc_MainContainer;
+        private src.ui.components.Dashboard Dashboard;
+        private src.ui.components.MinecraftMapsView MapsView;
     }
 }
 

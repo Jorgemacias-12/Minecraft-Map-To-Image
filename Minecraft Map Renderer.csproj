@@ -54,6 +54,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\logic\MinecraftMap.cs" />
+    <Compile Include="src\logic\MinecraftMapRenderer.cs" />
     <Compile Include="src\logic\MinecraftMapsReader.cs" />
     <Compile Include="src\logic\MinecraftMaps.cs" />
     <Compile Include="src\logic\MinecraftSave.cs" />
@@ -62,12 +63,31 @@
     <Compile Include="src\logic\MinecraftVersion.cs" />
     <Compile Include="src\logic\MinecraftVersionReader.cs" />
     <Compile Include="src\logic\MinecraftVersions.cs" />
-    <Compile Include="src\ui\MinecraftMapRendererForm.cs">
+    <Compile Include="src\ui\components\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\ui\components\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ui\components\MinecraftMapCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\ui\components\MinecraftMapCard.Designer.cs">
+      <DependentUpon>MinecraftMapCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ui\components\MinecraftMapsView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\ui\components\MinecraftSaveView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\ui\MinecraftMapsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ui\MinecraftMapRendererForm.Designer.cs">
-      <DependentUpon>MinecraftMapRendererForm.cs</DependentUpon>
+    <Compile Include="src\ui\MinecraftMapsForm.Designer.cs">
+      <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\utils\MinecraftColorsTable.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -78,8 +98,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\ui\MinecraftMapRendererForm.resx">
-      <DependentUpon>MinecraftMapRendererForm.cs</DependentUpon>
+    <EmbeddedResource Include="src\ui\components\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ui\components\MinecraftMapCard.resx">
+      <DependentUpon>MinecraftMapCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ui\MinecraftMapsForm.resx">
+      <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -95,10 +121,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\ui\components\" />
-    <Folder Include="src\utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="src\resources\minus-solid.png" />
     <Content Include="src\resources\window-maximize-solid.png" />
