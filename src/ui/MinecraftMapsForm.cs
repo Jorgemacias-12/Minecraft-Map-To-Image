@@ -22,7 +22,7 @@ namespace Minecraft_Map_Renderer
 
         #region Form Constants
         Rectangle WindowInitialSize;
-        Rectangle WindowMaximizedSize;
+        Screen WindowMaximizedSize;
         #endregion
 
         #region Form variables
@@ -106,21 +106,31 @@ namespace Minecraft_Map_Renderer
         #region Ui Util Functions
         private Size HandleWindowResize()
         {
-            
-            ActualScreen = Screen.FromControl(this);
-            WindowMaximizedSize = ActualScreen.WorkingArea;
-
             Size _;
 
-            _ = isMaximized ? new Size(WindowMaximizedSize.Width, WindowMaximizedSize.Height)
+            _ = isMaximized ? new Size(WindowMaximizedSize.WorkingArea.Width, WindowMaximizedSize.WorkingArea.Height)
                             : new Size(WindowInitialSize.Width, WindowInitialSize.Height);
 
-            Location = isMaximized ? new Point(ActualScreen.Bounds.X, ActualScreen.Bounds.Y)
-                                   : new Point(WindowInitialSize.X, WindowInitialSize.Y);
-
+            if (!isMaximized)
+            {
+                Location = new Point(WindowMaximizedSize.WorkingArea.Left + (WindowMaximizedSize.WorkingArea.Width - WindowInitialSize.Width)/2, 
+                                     (WindowMaximizedSize.WorkingArea.Height - WindowInitialSize.Height)/2);
+            }
+            else
+            {
+                Location = new Point(WindowMaximizedSize.WorkingArea.X, WindowMaximizedSize.WorkingArea.Y);
+            }
 
             return _;
         }
         #endregion
+
+        private void MinecraftMapRendererForm_Move(object sender, EventArgs e)
+        {
+            if (WindowMaximizedSize != Screen.FromControl(this))
+            {
+                WindowMaximizedSize = Screen.FromControl(this);
+            }       
+        }
     }
 }

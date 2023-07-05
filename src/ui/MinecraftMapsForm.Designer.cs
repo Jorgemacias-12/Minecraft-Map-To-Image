@@ -52,8 +52,9 @@
             this.Pnl_Topbar.Controls.Add(this.Lbl_Title);
             this.Pnl_Topbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_Topbar.Location = new System.Drawing.Point(0, 0);
+            this.Pnl_Topbar.Margin = new System.Windows.Forms.Padding(4);
             this.Pnl_Topbar.Name = "Pnl_Topbar";
-            this.Pnl_Topbar.Size = new System.Drawing.Size(800, 48);
+            this.Pnl_Topbar.Size = new System.Drawing.Size(1000, 50);
             this.Pnl_Topbar.TabIndex = 0;
             this.Pnl_Topbar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Pnl_Topbar_MouseDown);
             // 
@@ -67,12 +68,12 @@
             this.tableLayoutPanel1.Controls.Add(this.Btn_resize, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.Btn_exit, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(600, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(750, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 48);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(250, 50);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // Btn_minimize
@@ -82,9 +83,10 @@
             this.Btn_minimize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_minimize.FlatAppearance.BorderSize = 0;
             this.Btn_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_minimize.Location = new System.Drawing.Point(3, 3);
+            this.Btn_minimize.Location = new System.Drawing.Point(4, 4);
+            this.Btn_minimize.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_minimize.Name = "Btn_minimize";
-            this.Btn_minimize.Size = new System.Drawing.Size(60, 42);
+            this.Btn_minimize.Size = new System.Drawing.Size(75, 42);
             this.Btn_minimize.TabIndex = 2;
             this.Btn_minimize.UseVisualStyleBackColor = true;
             this.Btn_minimize.Click += new System.EventHandler(this.Btn_minimize_Click);
@@ -96,9 +98,10 @@
             this.Btn_resize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Btn_resize.FlatAppearance.BorderSize = 0;
             this.Btn_resize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_resize.Location = new System.Drawing.Point(69, 3);
+            this.Btn_resize.Location = new System.Drawing.Point(87, 4);
+            this.Btn_resize.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_resize.Name = "Btn_resize";
-            this.Btn_resize.Size = new System.Drawing.Size(60, 42);
+            this.Btn_resize.Size = new System.Drawing.Size(75, 42);
             this.Btn_resize.TabIndex = 1;
             this.Btn_resize.UseVisualStyleBackColor = true;
             this.Btn_resize.Click += new System.EventHandler(this.Btn_resize_Click);
@@ -112,10 +115,11 @@
             this.Btn_exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
             this.Btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
             this.Btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_exit.Location = new System.Drawing.Point(135, 3);
+            this.Btn_exit.Location = new System.Drawing.Point(170, 4);
+            this.Btn_exit.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_exit.Name = "Btn_exit";
-            this.Btn_exit.Padding = new System.Windows.Forms.Padding(30);
-            this.Btn_exit.Size = new System.Drawing.Size(62, 42);
+            this.Btn_exit.Padding = new System.Windows.Forms.Padding(38);
+            this.Btn_exit.Size = new System.Drawing.Size(76, 42);
             this.Btn_exit.TabIndex = 0;
             this.Btn_exit.UseVisualStyleBackColor = true;
             this.Btn_exit.Click += new System.EventHandler(this.Btn_exit_Click);
@@ -124,9 +128,10 @@
             // 
             this.Lbl_Title.Dock = System.Windows.Forms.DockStyle.Left;
             this.Lbl_Title.Location = new System.Drawing.Point(0, 0);
+            this.Lbl_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_Title.Name = "Lbl_Title";
-            this.Lbl_Title.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Lbl_Title.Size = new System.Drawing.Size(262, 48);
+            this.Lbl_Title.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Lbl_Title.Size = new System.Drawing.Size(328, 50);
             this.Lbl_Title.TabIndex = 0;
             this.Lbl_Title.Text = "Minecraft Map To Image";
             this.Lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,7 +177,7 @@
             // 
             // MinecraftMapRendererForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
@@ -184,12 +189,13 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.Margin = new System.Windows.Forms.Padding(8);
+            this.MinimumSize = new System.Drawing.Size(1000, 750);
             this.Name = "MinecraftMapRendererForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Minecraft Map To Image";
             this.Load += new System.EventHandler(this.MinecraftMapRendererForm_Load);
+            this.Move += new System.EventHandler(this.MinecraftMapRendererForm_Move);
             this.Pnl_Topbar.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.Sc_MainContainer.Panel1.ResumeLayout(false);
