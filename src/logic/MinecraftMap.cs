@@ -45,5 +45,29 @@ namespace Minecraft_Map_Renderer.src.logic
             ZCenter = zCenter;
             Colors = colors;
         }
+
+        public MinecraftMap(string name,
+                            string path, 
+                            string dimension, 
+                            byte scale,
+                            byte trackingPosition, 
+                            byte unlimitedTracking,
+                            int xCenter, int zCenter,
+                            int width, 
+                            int height, 
+                            byte[] colors)
+        {
+            Name = name;
+            Path = path;
+            Dimension = dimension;
+            Scale = scale;
+            TrackingPosition = trackingPosition;
+            UnlimitedTracking = unlimitedTracking;
+            XCenter = xCenter;
+            ZCenter = zCenter;
+            Width = width;
+            Height = height;
+            Colors = colors;
+        }
     }
 }
