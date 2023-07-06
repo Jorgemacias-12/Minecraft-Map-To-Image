@@ -1,9 +1,11 @@
 ﻿using fNbt;
+using Minecraft_Map_Renderer.src.utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Minecraft_Map_Renderer.src.logic
@@ -14,8 +16,11 @@ namespace Minecraft_Map_Renderer.src.logic
         private NbtCompound Root;
         private NbtCompound Data;
         private MinecraftMap Map;
+        private Version MinecraftVersion = new Version("1.16");
+        private Version CurrentVersion;
+        private const int NOT_USED_IN_VERSION = 100;
         
-        public async Task<List<MinecraftMap>> LoadMaps(string SavePath)
+        public async Task<List<MinecraftMap>> LoadMaps(string SavePath, string version)
         {
             List<MinecraftMap> maps = new List<MinecraftMap>();
 
@@ -35,8 +40,8 @@ namespace Minecraft_Map_Renderer.src.logic
 
                 Map = new MinecraftMap(Path.GetFileNameWithoutExtension(MapFilePath),
                                        MapFilePath,
-                                       ReadDimension(),
-                                       ReadLocked(),
+                                       ReadDimension(version),
+                                       ReadLocked(version),
                                        ReadScale(),
                                        ReadTrackingPosition(),
                                        ReadUnlimitedTracking(),
@@ -49,22 +54,66 @@ namespace Minecraft_Map_Renderer.src.logic
             return maps;
         }
 
-        private string ReadDimension()
+        private string ReadDimension(string version)
         {
-            NbtString Dimension;
+            // Delete any letters from version
+            version = Regex.Replace(version, @"[^0-9.]", "");
 
-            Dimension = Data.Get<NbtString>("dimension");
+            CurrentVersion = Version.Parse(version);
 
-            return Dimension.StringValue;
+            int result = CurrentVersion.CompareTo(MinecraftVersion);
+
+            if (result == -1)
+            {
+                NbtInt IDimension = Data.Get<NbtInt>("dimension");
+
+                string _;
+
+                MinecraftDimensions.dimensions.TryGetValue(IDimension.IntValue, out _);
+
+                return _;
+            }
+
+            if (result > 0)
+            {
+                NbtString SDimension = Data.Get<NbtString>("dimension");
+
+                return SDimension.StringValue;
+            }
+
+            return "";
         }
 
-        private byte ReadLocked()
+        private int ReadWidth()
         {
-            NbtByte Locked;
+            NbtInt Width = Data.Get<NbtInt>("width");
+            
+            return Width.IntValue;
+        }
 
-            Locked = Data.Get<NbtByte>("locked");
+        private int ReadHeight() 
+        {
+            NbtInt Height = Data.Get<NbtInt>("height");
 
-            return Locked.ByteValue;
+            return Height.IntValue;
+        }
+
+        private byte ReadLocked(string version)
+        {
+            version = Regex.Replace(version, @"[^0-9.]", "");
+
+            CurrentVersion = Version.Parse(version);
+
+            int result = CurrentVersion.CompareTo(MinecraftVersion);
+
+            if (result > 0)
+            {
+                NbtByte Locked = Data.Get<NbtByte>("locked");
+
+                return Locked.ByteValue;
+            }
+
+            return NOT_USED_IN_VERSION;
         }
 
         private byte ReadScale()
