@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Minecraft_Map_Renderer.src.logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
         #endregion
 
         #region Form
-        public MinecratMapInfoForm()
+        public MinecratMapInfoForm(MinecraftMap map)
         {
             InitializeComponent();
         }
