@@ -19,6 +19,8 @@ namespace Minecraft_Map_Renderer.src.logic
         public byte UnlimitedTracking { get; set; }
         public int XCenter { get; set; } 
         public int ZCenter { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
         public byte[] Colors = new byte[MAP_BYTE_SIZE];
 
         public MinecraftMap(string name,
