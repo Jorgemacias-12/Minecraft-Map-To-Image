@@ -56,14 +56,7 @@ namespace Minecraft_Map_Renderer.src.logic
 
         private string ReadDimension(string version)
         {
-            // Delete any letters from version
-            version = Regex.Replace(version, @"[^0-9.]", "");
-
-            CurrentVersion = Version.Parse(version);
-
-            int result = CurrentVersion.CompareTo(MinecraftVersion);
-
-            if (result == -1)
+            try
             {
                 NbtInt IDimension = Data.Get<NbtInt>("dimension");
 
@@ -73,15 +66,12 @@ namespace Minecraft_Map_Renderer.src.logic
 
                 return _;
             }
-
-            if (result > 0)
+            catch (Exception)
             {
                 NbtString SDimension = Data.Get<NbtString>("dimension");
 
                 return SDimension.StringValue;
             }
-
-            return "";
         }
 
         private int ReadWidth()
@@ -100,20 +90,13 @@ namespace Minecraft_Map_Renderer.src.logic
 
         private byte ReadLocked(string version)
         {
-            version = Regex.Replace(version, @"[^0-9.]", "");
+            NbtByte Locked = new NbtByte();
 
-            CurrentVersion = Version.Parse(version);
+            Locked = Data.Get<NbtByte>("locked");
 
-            int result = CurrentVersion.CompareTo(MinecraftVersion);
+            if (Locked is null) return NOT_USED_IN_VERSION;
 
-            if (result > 0)
-            {
-                NbtByte Locked = Data.Get<NbtByte>("locked");
-
-                return Locked.ByteValue;
-            }
-
-            return NOT_USED_IN_VERSION;
+            return Locked.ByteValue;
         }
 
         private byte ReadScale()
