@@ -92,6 +92,7 @@
       <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\utils\MinecraftColorsTable.cs" />
+    <Compile Include="src\utils\MinecraftDimensions.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
