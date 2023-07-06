@@ -45,7 +45,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
                 foreach(MinecraftMap map in Save.Maps)
                 {
 
-                    MinecraftMapCard MapCard = new MinecraftMapCard(map.Name, map.Colors)
+                    MinecraftMapCard MapCard = new MinecraftMapCard(map)
                     {
                         Width = 128,
                         Height = 128,
