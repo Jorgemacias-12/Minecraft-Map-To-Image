@@ -30,8 +30,6 @@ namespace Minecraft_Map_Renderer.src.logic
             {
                 string[] MinecraftSavesPath = await Task.Run(() => Directory.GetDirectories(MINECRAFT_SAVES_PATH));
 
-                MSaves = MinecraftSaves.Instance;
-
                 foreach(string MinecraftSavePath in MinecraftSavesPath)
                 {
                     Save = new MinecraftSave(Path.GetFileName(MinecraftSavePath),
@@ -39,7 +37,7 @@ namespace Minecraft_Map_Renderer.src.logic
                                              ReadVersion(MinecraftSavePath),
                                              ReadSplashIcon(MinecraftSavePath), null);
                     // Read maps here
-                    Save.Maps = await MapsReader.LoadMaps(MinecraftSavePath);
+                    Save.Maps = await MapsReader.LoadMaps(MinecraftSavePath, Save.Version);
                     
                     Saves.Add(Save);
 
