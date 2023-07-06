@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Minecraft_Map_Renderer.src.ui.components
 {
-    public partial class MinecratMapInfoForm : Form
+    public partial class MinecraftMapInfoForm : Form
     {
         #region InteropConstants
         private const int WM_SYSCOMMAND = 0x112;
@@ -21,7 +21,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
         #endregion
 
         #region Form
-        public MinecratMapInfoForm(MinecraftMap map)
+        public MinecraftMapInfoForm(MinecraftMap map)
         {
             InitializeComponent();
         }

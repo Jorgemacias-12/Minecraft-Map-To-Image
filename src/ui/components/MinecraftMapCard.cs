@@ -52,7 +52,6 @@ namespace Minecraft_Map_Renderer.src.ui.components
              * Invoke MapInfo Form (and create it)
              */
             //MessageBox.Show(_Colors.Length.ToString());}
-            
         }
 
     }
