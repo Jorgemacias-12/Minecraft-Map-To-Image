@@ -14,6 +14,10 @@ namespace Minecraft_Map_Renderer.src.ui.components
 {
     public partial class MinecraftMapInfoForm : Form
     {
+        #region Class Variables
+        private MinecraftMap Map;
+        #endregion 
+
         #region InteropConstants
         private const int WM_SYSCOMMAND = 0x112;
         private const int MOUSE_MOVE = 0xF012;
@@ -23,7 +27,11 @@ namespace Minecraft_Map_Renderer.src.ui.components
         #region Form
         public MinecraftMapInfoForm(MinecraftMap map)
         {
+            Map = map;
+
             InitializeComponent();
+
+            HandleShowData();
         }
         #endregion
 
@@ -61,8 +69,24 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
         private void Btn_exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Dispose();
         }
         #endregion
+
+        private void HandleShowData()
+        {
+            Pnl_MapView.BackgroundImage = Map.Image;
+            Pnl_MapView.BackgroundImageLayout = ImageLayout.Stretch;
+
+            Lbl_Name.Text = Map.Name;
+            Tbx_Locked.Text = Map.Locked.ToString();
+            Tbx_Scale.Text = Map.Scale.ToString();
+            Tbx_Width.Text = Map.Width.ToString();
+            Tbx_Height.Text = Map.Height.ToString();
+            Tbx_TrackingPosition.Text = Map.TrackingPosition.ToString();
+            Tbx_XPosition.Text = Map.XCenter.ToString();
+            Tbx_ZPosition.Text = Map.ZCenter.ToString();
+            Tbx_Dimension.Text = Map.Dimension.ToString(); 
+        }
     }
 }

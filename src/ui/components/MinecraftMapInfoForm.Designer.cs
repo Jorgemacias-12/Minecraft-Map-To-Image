@@ -129,7 +129,7 @@
             this.Btn_minimize.FlatAppearance.BorderSize = 0;
             this.Btn_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_minimize.Location = new System.Drawing.Point(2, 2);
-            this.Btn_minimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_minimize.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_minimize.Name = "Btn_minimize";
             this.Btn_minimize.Size = new System.Drawing.Size(58, 37);
             this.Btn_minimize.TabIndex = 0;
@@ -144,7 +144,7 @@
             this.Btn_resize.FlatAppearance.BorderSize = 0;
             this.Btn_resize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_resize.Location = new System.Drawing.Point(64, 2);
-            this.Btn_resize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_resize.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_resize.Name = "Btn_resize";
             this.Btn_resize.Size = new System.Drawing.Size(58, 37);
             this.Btn_resize.TabIndex = 1;
@@ -159,7 +159,7 @@
             this.Btn_exit.FlatAppearance.BorderSize = 0;
             this.Btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_exit.Location = new System.Drawing.Point(126, 2);
-            this.Btn_exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Btn_exit.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_exit.Name = "Btn_exit";
             this.Btn_exit.Size = new System.Drawing.Size(60, 37);
             this.Btn_exit.TabIndex = 2;
@@ -188,7 +188,7 @@
             this.Pnl_Information.Controls.Add(this.Pnl_Data);
             this.Pnl_Information.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_Information.Location = new System.Drawing.Point(0, 41);
-            this.Pnl_Information.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Information.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Information.Name = "Pnl_Information";
             this.Pnl_Information.Size = new System.Drawing.Size(736, 530);
             this.Pnl_Information.TabIndex = 1;
@@ -197,18 +197,18 @@
             // 
             this.Pnl_MapView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_MapView.Location = new System.Drawing.Point(0, 0);
-            this.Pnl_MapView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_MapView.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_MapView.Name = "Pnl_MapView";
-            this.Pnl_MapView.Size = new System.Drawing.Size(343, 400);
+            this.Pnl_MapView.Size = new System.Drawing.Size(372, 372);
             this.Pnl_MapView.TabIndex = 2;
             // 
             // Pnl_Controls
             // 
             this.Pnl_Controls.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Pnl_Controls.Location = new System.Drawing.Point(0, 400);
-            this.Pnl_Controls.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Controls.Location = new System.Drawing.Point(0, 372);
+            this.Pnl_Controls.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Controls.Name = "Pnl_Controls";
-            this.Pnl_Controls.Size = new System.Drawing.Size(343, 130);
+            this.Pnl_Controls.Size = new System.Drawing.Size(372, 158);
             this.Pnl_Controls.TabIndex = 1;
             // 
             // Pnl_Data
@@ -216,10 +216,10 @@
             this.Pnl_Data.Controls.Add(this.Tlp_Data);
             this.Pnl_Data.Controls.Add(this.Lbl_Name);
             this.Pnl_Data.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Pnl_Data.Location = new System.Drawing.Point(343, 0);
-            this.Pnl_Data.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Data.Location = new System.Drawing.Point(372, 0);
+            this.Pnl_Data.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Data.Name = "Pnl_Data";
-            this.Pnl_Data.Size = new System.Drawing.Size(393, 530);
+            this.Pnl_Data.Size = new System.Drawing.Size(364, 530);
             this.Pnl_Data.TabIndex = 0;
             // 
             // Tlp_Data
@@ -240,8 +240,9 @@
             this.Tlp_Data.Controls.Add(this.Pnl_Dimension, 0, 5);
             this.Tlp_Data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Tlp_Data.Location = new System.Drawing.Point(0, 57);
-            this.Tlp_Data.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tlp_Data.Margin = new System.Windows.Forms.Padding(2);
             this.Tlp_Data.Name = "Tlp_Data";
+            this.Tlp_Data.Padding = new System.Windows.Forms.Padding(20);
             this.Tlp_Data.RowCount = 6;
             this.Tlp_Data.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.Tlp_Data.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -249,7 +250,7 @@
             this.Tlp_Data.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.Tlp_Data.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.Tlp_Data.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.Tlp_Data.Size = new System.Drawing.Size(393, 473);
+            this.Tlp_Data.Size = new System.Drawing.Size(364, 473);
             this.Tlp_Data.TabIndex = 1;
             // 
             // Pnl_Banners
@@ -257,19 +258,24 @@
             this.Pnl_Banners.Controls.Add(this.Tbx_Banners);
             this.Pnl_Banners.Controls.Add(this.Lbl_Banners);
             this.Pnl_Banners.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_Banners.Location = new System.Drawing.Point(2, 2);
-            this.Pnl_Banners.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Banners.Location = new System.Drawing.Point(22, 22);
+            this.Pnl_Banners.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Banners.Name = "Pnl_Banners";
-            this.Pnl_Banners.Size = new System.Drawing.Size(192, 74);
+            this.Pnl_Banners.Size = new System.Drawing.Size(158, 68);
             this.Pnl_Banners.TabIndex = 10;
             // 
             // Tbx_Banners
             // 
+            this.Tbx_Banners.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_Banners.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_Banners.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_Banners.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_Banners.ForeColor = System.Drawing.Color.White;
             this.Tbx_Banners.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_Banners.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Banners.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Banners.Name = "Tbx_Banners";
-            this.Tbx_Banners.Size = new System.Drawing.Size(192, 20);
+            this.Tbx_Banners.ReadOnly = true;
+            this.Tbx_Banners.Size = new System.Drawing.Size(158, 19);
             this.Tbx_Banners.TabIndex = 4;
             // 
             // Lbl_Banners
@@ -280,7 +286,7 @@
             this.Lbl_Banners.Location = new System.Drawing.Point(0, 0);
             this.Lbl_Banners.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Banners.Name = "Lbl_Banners";
-            this.Lbl_Banners.Size = new System.Drawing.Size(192, 50);
+            this.Lbl_Banners.Size = new System.Drawing.Size(158, 50);
             this.Lbl_Banners.TabIndex = 3;
             this.Lbl_Banners.Text = "Banners:";
             this.Lbl_Banners.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -290,19 +296,24 @@
             this.Pnl_Frames.Controls.Add(this.Tbx_Frames);
             this.Pnl_Frames.Controls.Add(this.Lbl_Frames);
             this.Pnl_Frames.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_Frames.Location = new System.Drawing.Point(198, 2);
-            this.Pnl_Frames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Frames.Location = new System.Drawing.Point(184, 22);
+            this.Pnl_Frames.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Frames.Name = "Pnl_Frames";
-            this.Pnl_Frames.Size = new System.Drawing.Size(193, 74);
+            this.Pnl_Frames.Size = new System.Drawing.Size(158, 68);
             this.Pnl_Frames.TabIndex = 11;
             // 
             // Tbx_Frames
             // 
+            this.Tbx_Frames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_Frames.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_Frames.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_Frames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_Frames.ForeColor = System.Drawing.Color.White;
             this.Tbx_Frames.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_Frames.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Frames.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Frames.Name = "Tbx_Frames";
-            this.Tbx_Frames.Size = new System.Drawing.Size(193, 20);
+            this.Tbx_Frames.ReadOnly = true;
+            this.Tbx_Frames.Size = new System.Drawing.Size(158, 19);
             this.Tbx_Frames.TabIndex = 5;
             // 
             // Lbl_Frames
@@ -313,7 +324,7 @@
             this.Lbl_Frames.Location = new System.Drawing.Point(0, 0);
             this.Lbl_Frames.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Frames.Name = "Lbl_Frames";
-            this.Lbl_Frames.Size = new System.Drawing.Size(193, 50);
+            this.Lbl_Frames.Size = new System.Drawing.Size(158, 50);
             this.Lbl_Frames.TabIndex = 4;
             this.Lbl_Frames.Text = "Frames:";
             this.Lbl_Frames.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -323,19 +334,24 @@
             this.Pnl_Locked.Controls.Add(this.Tbx_Locked);
             this.Pnl_Locked.Controls.Add(this.Lbl_Locked);
             this.Pnl_Locked.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_Locked.Location = new System.Drawing.Point(2, 80);
-            this.Pnl_Locked.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Locked.Location = new System.Drawing.Point(22, 94);
+            this.Pnl_Locked.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Locked.Name = "Pnl_Locked";
-            this.Pnl_Locked.Size = new System.Drawing.Size(192, 74);
+            this.Pnl_Locked.Size = new System.Drawing.Size(158, 68);
             this.Pnl_Locked.TabIndex = 12;
             // 
             // Tbx_Locked
             // 
+            this.Tbx_Locked.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_Locked.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_Locked.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_Locked.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_Locked.ForeColor = System.Drawing.Color.White;
             this.Tbx_Locked.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_Locked.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Locked.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Locked.Name = "Tbx_Locked";
-            this.Tbx_Locked.Size = new System.Drawing.Size(192, 20);
+            this.Tbx_Locked.ReadOnly = true;
+            this.Tbx_Locked.Size = new System.Drawing.Size(158, 19);
             this.Tbx_Locked.TabIndex = 7;
             // 
             // Lbl_Locked
@@ -346,7 +362,7 @@
             this.Lbl_Locked.Location = new System.Drawing.Point(0, 0);
             this.Lbl_Locked.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Locked.Name = "Lbl_Locked";
-            this.Lbl_Locked.Size = new System.Drawing.Size(192, 50);
+            this.Lbl_Locked.Size = new System.Drawing.Size(158, 50);
             this.Lbl_Locked.TabIndex = 6;
             this.Lbl_Locked.Text = "Locked:";
             this.Lbl_Locked.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,19 +372,24 @@
             this.Pnl_Scale.Controls.Add(this.Tbx_Scale);
             this.Pnl_Scale.Controls.Add(this.Lbl_Scale);
             this.Pnl_Scale.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_Scale.Location = new System.Drawing.Point(198, 80);
-            this.Pnl_Scale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Scale.Location = new System.Drawing.Point(184, 94);
+            this.Pnl_Scale.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Scale.Name = "Pnl_Scale";
-            this.Pnl_Scale.Size = new System.Drawing.Size(193, 74);
+            this.Pnl_Scale.Size = new System.Drawing.Size(158, 68);
             this.Pnl_Scale.TabIndex = 13;
             // 
             // Tbx_Scale
             // 
+            this.Tbx_Scale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_Scale.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_Scale.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_Scale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_Scale.ForeColor = System.Drawing.Color.White;
             this.Tbx_Scale.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_Scale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Scale.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Scale.Name = "Tbx_Scale";
-            this.Tbx_Scale.Size = new System.Drawing.Size(193, 20);
+            this.Tbx_Scale.ReadOnly = true;
+            this.Tbx_Scale.Size = new System.Drawing.Size(158, 19);
             this.Tbx_Scale.TabIndex = 8;
             // 
             // Lbl_Scale
@@ -379,7 +400,7 @@
             this.Lbl_Scale.Location = new System.Drawing.Point(0, 0);
             this.Lbl_Scale.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Scale.Name = "Lbl_Scale";
-            this.Lbl_Scale.Size = new System.Drawing.Size(193, 50);
+            this.Lbl_Scale.Size = new System.Drawing.Size(158, 50);
             this.Lbl_Scale.TabIndex = 7;
             this.Lbl_Scale.Text = "Scale:";
             this.Lbl_Scale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,19 +410,24 @@
             this.Pnl_TrackingPosition.Controls.Add(this.Tbx_TrackingPosition);
             this.Pnl_TrackingPosition.Controls.Add(this.Lbl_TrackingPosition);
             this.Pnl_TrackingPosition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_TrackingPosition.Location = new System.Drawing.Point(2, 158);
-            this.Pnl_TrackingPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_TrackingPosition.Location = new System.Drawing.Point(22, 166);
+            this.Pnl_TrackingPosition.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_TrackingPosition.Name = "Pnl_TrackingPosition";
-            this.Pnl_TrackingPosition.Size = new System.Drawing.Size(192, 74);
+            this.Pnl_TrackingPosition.Size = new System.Drawing.Size(158, 68);
             this.Pnl_TrackingPosition.TabIndex = 14;
             // 
             // Tbx_TrackingPosition
             // 
+            this.Tbx_TrackingPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_TrackingPosition.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_TrackingPosition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_TrackingPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_TrackingPosition.ForeColor = System.Drawing.Color.White;
             this.Tbx_TrackingPosition.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_TrackingPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_TrackingPosition.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_TrackingPosition.Name = "Tbx_TrackingPosition";
-            this.Tbx_TrackingPosition.Size = new System.Drawing.Size(192, 20);
+            this.Tbx_TrackingPosition.ReadOnly = true;
+            this.Tbx_TrackingPosition.Size = new System.Drawing.Size(158, 19);
             this.Tbx_TrackingPosition.TabIndex = 9;
             // 
             // Lbl_TrackingPosition
@@ -412,7 +438,7 @@
             this.Lbl_TrackingPosition.Location = new System.Drawing.Point(0, 0);
             this.Lbl_TrackingPosition.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_TrackingPosition.Name = "Lbl_TrackingPosition";
-            this.Lbl_TrackingPosition.Size = new System.Drawing.Size(192, 50);
+            this.Lbl_TrackingPosition.Size = new System.Drawing.Size(158, 50);
             this.Lbl_TrackingPosition.TabIndex = 8;
             this.Lbl_TrackingPosition.Text = "Tracking Position:";
             this.Lbl_TrackingPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -423,19 +449,24 @@
             this.Pnl_UnlimitedTracking.Controls.Add(this.Tbx_UnlimitedTracking);
             this.Pnl_UnlimitedTracking.Controls.Add(this.Lbl_UnlimitedTracking);
             this.Pnl_UnlimitedTracking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_UnlimitedTracking.Location = new System.Drawing.Point(198, 158);
-            this.Pnl_UnlimitedTracking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_UnlimitedTracking.Location = new System.Drawing.Point(184, 166);
+            this.Pnl_UnlimitedTracking.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_UnlimitedTracking.Name = "Pnl_UnlimitedTracking";
-            this.Pnl_UnlimitedTracking.Size = new System.Drawing.Size(193, 74);
+            this.Pnl_UnlimitedTracking.Size = new System.Drawing.Size(158, 68);
             this.Pnl_UnlimitedTracking.TabIndex = 15;
             // 
             // Tbx_UnlimitedTracking
             // 
+            this.Tbx_UnlimitedTracking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_UnlimitedTracking.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_UnlimitedTracking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_UnlimitedTracking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_UnlimitedTracking.ForeColor = System.Drawing.Color.White;
             this.Tbx_UnlimitedTracking.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_UnlimitedTracking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_UnlimitedTracking.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_UnlimitedTracking.Name = "Tbx_UnlimitedTracking";
-            this.Tbx_UnlimitedTracking.Size = new System.Drawing.Size(193, 20);
+            this.Tbx_UnlimitedTracking.ReadOnly = true;
+            this.Tbx_UnlimitedTracking.Size = new System.Drawing.Size(158, 19);
             this.Tbx_UnlimitedTracking.TabIndex = 10;
             // 
             // Lbl_UnlimitedTracking
@@ -446,7 +477,7 @@
             this.Lbl_UnlimitedTracking.Location = new System.Drawing.Point(0, 0);
             this.Lbl_UnlimitedTracking.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_UnlimitedTracking.Name = "Lbl_UnlimitedTracking";
-            this.Lbl_UnlimitedTracking.Size = new System.Drawing.Size(193, 50);
+            this.Lbl_UnlimitedTracking.Size = new System.Drawing.Size(158, 50);
             this.Lbl_UnlimitedTracking.TabIndex = 9;
             this.Lbl_UnlimitedTracking.Text = "Unlimited Tracking:";
             this.Lbl_UnlimitedTracking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -456,19 +487,24 @@
             this.Pnl_Width.Controls.Add(this.Tbx_Width);
             this.Pnl_Width.Controls.Add(this.Lbl_Width);
             this.Pnl_Width.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_Width.Location = new System.Drawing.Point(2, 236);
-            this.Pnl_Width.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Width.Location = new System.Drawing.Point(22, 238);
+            this.Pnl_Width.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Width.Name = "Pnl_Width";
-            this.Pnl_Width.Size = new System.Drawing.Size(192, 74);
+            this.Pnl_Width.Size = new System.Drawing.Size(158, 68);
             this.Pnl_Width.TabIndex = 16;
             // 
             // Tbx_Width
             // 
+            this.Tbx_Width.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_Width.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_Width.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_Width.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_Width.ForeColor = System.Drawing.Color.White;
             this.Tbx_Width.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_Width.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Width.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Width.Name = "Tbx_Width";
-            this.Tbx_Width.Size = new System.Drawing.Size(192, 20);
+            this.Tbx_Width.ReadOnly = true;
+            this.Tbx_Width.Size = new System.Drawing.Size(158, 19);
             this.Tbx_Width.TabIndex = 10;
             // 
             // Lbl_Width
@@ -479,7 +515,7 @@
             this.Lbl_Width.Location = new System.Drawing.Point(0, 0);
             this.Lbl_Width.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Width.Name = "Lbl_Width";
-            this.Lbl_Width.Size = new System.Drawing.Size(192, 50);
+            this.Lbl_Width.Size = new System.Drawing.Size(158, 50);
             this.Lbl_Width.TabIndex = 9;
             this.Lbl_Width.Text = "Width";
             this.Lbl_Width.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -489,19 +525,24 @@
             this.Pnl_Height.Controls.Add(this.Tbx_Height);
             this.Pnl_Height.Controls.Add(this.Lbl_Height);
             this.Pnl_Height.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_Height.Location = new System.Drawing.Point(198, 236);
-            this.Pnl_Height.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Height.Location = new System.Drawing.Point(184, 238);
+            this.Pnl_Height.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Height.Name = "Pnl_Height";
-            this.Pnl_Height.Size = new System.Drawing.Size(193, 74);
+            this.Pnl_Height.Size = new System.Drawing.Size(158, 68);
             this.Pnl_Height.TabIndex = 17;
             // 
             // Tbx_Height
             // 
+            this.Tbx_Height.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_Height.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_Height.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_Height.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_Height.ForeColor = System.Drawing.Color.White;
             this.Tbx_Height.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_Height.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Height.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Height.Name = "Tbx_Height";
-            this.Tbx_Height.Size = new System.Drawing.Size(193, 20);
+            this.Tbx_Height.ReadOnly = true;
+            this.Tbx_Height.Size = new System.Drawing.Size(158, 19);
             this.Tbx_Height.TabIndex = 11;
             // 
             // Lbl_Height
@@ -512,7 +553,7 @@
             this.Lbl_Height.Location = new System.Drawing.Point(0, 0);
             this.Lbl_Height.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Height.Name = "Lbl_Height";
-            this.Lbl_Height.Size = new System.Drawing.Size(193, 50);
+            this.Lbl_Height.Size = new System.Drawing.Size(158, 50);
             this.Lbl_Height.TabIndex = 9;
             this.Lbl_Height.Text = "Height";
             this.Lbl_Height.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -522,19 +563,24 @@
             this.Pnl_XPosition.Controls.Add(this.Tbx_XPosition);
             this.Pnl_XPosition.Controls.Add(this.Lbl_XPosition);
             this.Pnl_XPosition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_XPosition.Location = new System.Drawing.Point(2, 314);
-            this.Pnl_XPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_XPosition.Location = new System.Drawing.Point(22, 310);
+            this.Pnl_XPosition.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_XPosition.Name = "Pnl_XPosition";
-            this.Pnl_XPosition.Size = new System.Drawing.Size(192, 74);
+            this.Pnl_XPosition.Size = new System.Drawing.Size(158, 68);
             this.Pnl_XPosition.TabIndex = 18;
             // 
             // Tbx_XPosition
             // 
+            this.Tbx_XPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_XPosition.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_XPosition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_XPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_XPosition.ForeColor = System.Drawing.Color.White;
             this.Tbx_XPosition.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_XPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_XPosition.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_XPosition.Name = "Tbx_XPosition";
-            this.Tbx_XPosition.Size = new System.Drawing.Size(192, 20);
+            this.Tbx_XPosition.ReadOnly = true;
+            this.Tbx_XPosition.Size = new System.Drawing.Size(158, 19);
             this.Tbx_XPosition.TabIndex = 11;
             // 
             // Lbl_XPosition
@@ -545,7 +591,7 @@
             this.Lbl_XPosition.Location = new System.Drawing.Point(0, 0);
             this.Lbl_XPosition.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_XPosition.Name = "Lbl_XPosition";
-            this.Lbl_XPosition.Size = new System.Drawing.Size(192, 50);
+            this.Lbl_XPosition.Size = new System.Drawing.Size(158, 50);
             this.Lbl_XPosition.TabIndex = 10;
             this.Lbl_XPosition.Text = "X Position:";
             this.Lbl_XPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -555,19 +601,24 @@
             this.Pnl_ZPosition.Controls.Add(this.Tbx_ZPosition);
             this.Pnl_ZPosition.Controls.Add(this.Lbl_ZPosition);
             this.Pnl_ZPosition.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_ZPosition.Location = new System.Drawing.Point(198, 314);
-            this.Pnl_ZPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_ZPosition.Location = new System.Drawing.Point(184, 310);
+            this.Pnl_ZPosition.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_ZPosition.Name = "Pnl_ZPosition";
-            this.Pnl_ZPosition.Size = new System.Drawing.Size(193, 74);
+            this.Pnl_ZPosition.Size = new System.Drawing.Size(158, 68);
             this.Pnl_ZPosition.TabIndex = 19;
             // 
             // Tbx_ZPosition
             // 
+            this.Tbx_ZPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_ZPosition.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_ZPosition.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_ZPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_ZPosition.ForeColor = System.Drawing.Color.White;
             this.Tbx_ZPosition.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_ZPosition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_ZPosition.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_ZPosition.Name = "Tbx_ZPosition";
-            this.Tbx_ZPosition.Size = new System.Drawing.Size(193, 20);
+            this.Tbx_ZPosition.ReadOnly = true;
+            this.Tbx_ZPosition.Size = new System.Drawing.Size(158, 19);
             this.Tbx_ZPosition.TabIndex = 12;
             // 
             // Lbl_ZPosition
@@ -578,7 +629,7 @@
             this.Lbl_ZPosition.Location = new System.Drawing.Point(0, 0);
             this.Lbl_ZPosition.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_ZPosition.Name = "Lbl_ZPosition";
-            this.Lbl_ZPosition.Size = new System.Drawing.Size(193, 50);
+            this.Lbl_ZPosition.Size = new System.Drawing.Size(158, 50);
             this.Lbl_ZPosition.TabIndex = 11;
             this.Lbl_ZPosition.Text = "Z Position:";
             this.Lbl_ZPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -588,19 +639,24 @@
             this.Pnl_Dimension.Controls.Add(this.Tbx_Dimension);
             this.Pnl_Dimension.Controls.Add(this.Lbl_Dimension);
             this.Pnl_Dimension.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pnl_Dimension.Location = new System.Drawing.Point(2, 392);
-            this.Pnl_Dimension.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pnl_Dimension.Location = new System.Drawing.Point(22, 382);
+            this.Pnl_Dimension.Margin = new System.Windows.Forms.Padding(2);
             this.Pnl_Dimension.Name = "Pnl_Dimension";
-            this.Pnl_Dimension.Size = new System.Drawing.Size(192, 79);
+            this.Pnl_Dimension.Size = new System.Drawing.Size(158, 69);
             this.Pnl_Dimension.TabIndex = 20;
             // 
             // Tbx_Dimension
             // 
+            this.Tbx_Dimension.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Tbx_Dimension.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx_Dimension.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tbx_Dimension.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tbx_Dimension.ForeColor = System.Drawing.Color.White;
             this.Tbx_Dimension.Location = new System.Drawing.Point(0, 50);
-            this.Tbx_Dimension.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Tbx_Dimension.Margin = new System.Windows.Forms.Padding(2);
             this.Tbx_Dimension.Name = "Tbx_Dimension";
-            this.Tbx_Dimension.Size = new System.Drawing.Size(192, 20);
+            this.Tbx_Dimension.ReadOnly = true;
+            this.Tbx_Dimension.Size = new System.Drawing.Size(158, 19);
             this.Tbx_Dimension.TabIndex = 13;
             // 
             // Lbl_Dimension
@@ -611,7 +667,7 @@
             this.Lbl_Dimension.Location = new System.Drawing.Point(0, 0);
             this.Lbl_Dimension.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Dimension.Name = "Lbl_Dimension";
-            this.Lbl_Dimension.Size = new System.Drawing.Size(192, 50);
+            this.Lbl_Dimension.Size = new System.Drawing.Size(158, 50);
             this.Lbl_Dimension.TabIndex = 12;
             this.Lbl_Dimension.Text = "Dimension:";
             this.Lbl_Dimension.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -624,12 +680,12 @@
             this.Lbl_Name.Location = new System.Drawing.Point(0, 0);
             this.Lbl_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Name.Name = "Lbl_Name";
-            this.Lbl_Name.Size = new System.Drawing.Size(393, 57);
+            this.Lbl_Name.Size = new System.Drawing.Size(364, 57);
             this.Lbl_Name.TabIndex = 0;
             this.Lbl_Name.Text = "Name";
             this.Lbl_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MinecratMapInfoForm
+            // MinecraftMapInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -637,8 +693,8 @@
             this.Controls.Add(this.Pnl_Information);
             this.Controls.Add(this.Pnl_TopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "MinecratMapInfoForm";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "MinecraftMapInfoForm";
             this.Text = "Minecrat Map Info Form";
             this.Pnl_TopBar.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

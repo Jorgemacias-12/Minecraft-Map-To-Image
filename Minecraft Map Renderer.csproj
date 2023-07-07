@@ -79,17 +79,17 @@
     <Compile Include="src\ui\components\MinecraftMapCard.Designer.cs">
       <DependentUpon>MinecraftMapCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\ui\components\MinecraftMapInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ui\components\MinecraftMapInfoForm.Designer.cs">
+      <DependentUpon>MinecraftMapInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\ui\components\MinecraftMapsView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="src\ui\components\MinecraftSaveView.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="src\ui\components\MinecratMapInfoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\ui\components\MinecratMapInfoForm.Designer.cs">
-      <DependentUpon>MinecratMapInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\ui\MinecraftMapsForm.cs">
       <SubType>Form</SubType>
@@ -110,8 +110,8 @@
     <EmbeddedResource Include="src\ui\components\MinecraftMapCard.resx">
       <DependentUpon>MinecraftMapCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ui\components\MinecratMapInfoForm.resx">
-      <DependentUpon>MinecratMapInfoForm.cs</DependentUpon>
+    <EmbeddedResource Include="src\ui\components\MinecraftMapInfoForm.resx">
+      <DependentUpon>MinecraftMapInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\ui\MinecraftMapsForm.resx">
       <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
