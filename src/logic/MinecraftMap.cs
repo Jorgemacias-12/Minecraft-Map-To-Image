@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Minecraft_Map_Renderer.src.logic
     public class MinecraftMap
     {
         private const int MAP_BYTE_SIZE = 16384;
+        private Bitmap _Image;
 
         public string Name { get; set; } 
         public string Path { get; set; }
@@ -21,6 +23,24 @@ namespace Minecraft_Map_Renderer.src.logic
         public int ZCenter { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
+
+        public Bitmap Image
+        {
+            get
+            {
+                if (_Image == null)
+                {
+                    _Image = MinecraftMapRenderer.DrawMap(Colors, 128, 128);
+                }
+
+                return _Image;
+            }
+            set
+            {
+                _Image = value;
+            }
+        }
+
         public byte[] Colors = new byte[MAP_BYTE_SIZE];
 
         public MinecraftMap(string name,

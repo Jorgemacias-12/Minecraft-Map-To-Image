@@ -38,9 +38,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
         private void HandleDrawMapView()
         {
-            Pbx_MapPreview.BackgroundImage = MinecraftMapRenderer.DrawMap(Map.Colors, 
-                                                                          Pbx_MapPreview.Width,
-                                                                          Pbx_MapPreview.Height);
+            Pbx_MapPreview.BackgroundImage = Map.Image;
             
             Pbx_MapPreview.BackgroundImageLayout = ImageLayout.Stretch;
         }
@@ -52,6 +50,9 @@ namespace Minecraft_Map_Renderer.src.ui.components
              * Invoke MapInfo Form (and create it)
              */
             //MessageBox.Show(_Colors.Length.ToString());}
+            MinecraftMapInfoForm MapView = new MinecraftMapInfoForm(Map);
+
+            MapView.Show();
         }
 
     }
