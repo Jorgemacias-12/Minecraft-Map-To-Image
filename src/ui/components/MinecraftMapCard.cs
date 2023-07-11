@@ -45,14 +45,9 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
         private void HandleShowMapInfo(object sender, EventArgs e)
         {
-            /* 
-             * Todo:
-             * Invoke MapInfo Form (and create it)
-             */
-            //MessageBox.Show(_Colors.Length.ToString());}
-            MinecraftMapInfoForm MapView = new MinecraftMapInfoForm(Map);
+            MinecraftMapForm MapForm = new MinecraftMapForm(Map);
 
-            MapView.Show();
+            MapForm.ShowDialog();
         }
 
     }
