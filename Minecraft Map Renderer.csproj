@@ -67,6 +67,9 @@
     <Compile Include="src\logic\MinecraftVersion.cs" />
     <Compile Include="src\logic\MinecraftVersionReader.cs" />
     <Compile Include="src\logic\MinecraftVersions.cs" />
+    <Compile Include="src\ui\components\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="src\ui\components\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -79,11 +82,11 @@
     <Compile Include="src\ui\components\MinecraftMapCard.Designer.cs">
       <DependentUpon>MinecraftMapCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\ui\components\MinecraftMapInfoForm.cs">
+    <Compile Include="src\ui\MinecraftMapForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ui\components\MinecraftMapInfoForm.Designer.cs">
-      <DependentUpon>MinecraftMapInfoForm.cs</DependentUpon>
+    <Compile Include="src\ui\MinecraftMapForm.Designer.cs">
+      <DependentUpon>MinecraftMapForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\ui\components\MinecraftMapsView.cs">
       <SubType>Component</SubType>
@@ -97,6 +100,8 @@
     <Compile Include="src\ui\MinecraftMapsForm.Designer.cs">
       <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\utils\Border.cs" />
+    <Compile Include="src\utils\ImageFormats.cs" />
     <Compile Include="src\utils\MinecraftColorsTable.cs" />
     <Compile Include="src\utils\MinecraftDimensions.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -110,8 +115,8 @@
     <EmbeddedResource Include="src\ui\components\MinecraftMapCard.resx">
       <DependentUpon>MinecraftMapCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ui\components\MinecraftMapInfoForm.resx">
-      <DependentUpon>MinecraftMapInfoForm.cs</DependentUpon>
+    <EmbeddedResource Include="src\ui\MinecraftMapForm.resx">
+      <DependentUpon>MinecraftMapForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\ui\MinecraftMapsForm.resx">
       <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
