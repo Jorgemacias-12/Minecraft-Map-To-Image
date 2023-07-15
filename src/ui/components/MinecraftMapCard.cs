@@ -14,7 +14,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
 {
     public partial class MinecraftMapCard : UserControl
     {
-        MinecraftMap Map;
+        private readonly MinecraftMap Map;
 
         public MinecraftMapCard(MinecraftMap map)
         {
