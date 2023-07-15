@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -158,6 +160,12 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
             Map.Image.Save(_.FileName,
                            ImageFormats.Formats[Cmb_ImageExtensions.Text]);
+
+            Process photoViewer = new Process();
+
+            photoViewer.StartInfo.FileName = _.FileName;
+            photoViewer.StartInfo.Arguments = _.FileName;
+            photoViewer.Start();
         }
     }
 }
