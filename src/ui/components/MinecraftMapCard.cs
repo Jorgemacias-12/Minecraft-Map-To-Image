@@ -47,7 +47,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
         {
             MinecraftMapForm MapForm = new MinecraftMapForm(Map);
 
-            MapForm.ShowDialog();
+            MapForm.Show();
         }
 
     }
