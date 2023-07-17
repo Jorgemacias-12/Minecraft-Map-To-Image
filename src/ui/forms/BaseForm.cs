@@ -117,7 +117,5 @@ namespace Minecraft_Map_Renderer.src.ui.forms
             return _;
         }
         #endregion
-
-        
     }
 }
