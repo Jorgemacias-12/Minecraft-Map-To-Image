@@ -82,6 +82,12 @@
     <Compile Include="src\ui\components\MinecraftMapCard.Designer.cs">
       <DependentUpon>MinecraftMapCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\ui\forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ui\forms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\ui\MinecraftMapForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\ui\components\MinecraftMapCard.resx">
       <DependentUpon>MinecraftMapCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ui\forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\ui\MinecraftMapForm.resx">
       <DependentUpon>MinecraftMapForm.cs</DependentUpon>
