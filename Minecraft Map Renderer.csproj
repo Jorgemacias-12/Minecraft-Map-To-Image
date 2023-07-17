@@ -138,6 +138,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="src\resources\config.png" />
+    <None Include="src\resources\Map.png" />
     <Content Include="src\resources\minus-solid.png" />
     <Content Include="src\resources\reload.png.png" />
     <Content Include="src\resources\window-maximize-solid.png" />
