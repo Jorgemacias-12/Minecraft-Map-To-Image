@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.Pnl_MainContainer = new System.Windows.Forms.Panel();
             this.Pnl_Topbar = new System.Windows.Forms.Panel();
-            this.Lbl_Title = new System.Windows.Forms.Label();
-            this.Pbx_Icon = new System.Windows.Forms.PictureBox();
             this.Tbl_Controls = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_minimize = new System.Windows.Forms.Button();
             this.Btn_resize = new System.Windows.Forms.Button();
             this.Btn_exit = new System.Windows.Forms.Button();
+            this.Lbl_Title = new System.Windows.Forms.Label();
+            this.Pbx_Icon = new System.Windows.Forms.PictureBox();
             this.Pnl_MainContainer.SuspendLayout();
             this.Pnl_Topbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Icon)).BeginInit();
             this.Tbl_Controls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Icon)).BeginInit();
             this.SuspendLayout();
             // 
             // Pnl_MainContainer
@@ -65,31 +65,6 @@
             this.Pnl_Topbar.Size = new System.Drawing.Size(784, 40);
             this.Pnl_Topbar.TabIndex = 0;
             this.Pnl_Topbar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Pnl_Topbar_MouseDown);
-            // 
-            // Lbl_Title
-            // 
-            this.Lbl_Title.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Title.ForeColor = System.Drawing.Color.White;
-            this.Lbl_Title.Location = new System.Drawing.Point(48, 0);
-            this.Lbl_Title.Name = "Lbl_Title";
-            this.Lbl_Title.Size = new System.Drawing.Size(192, 40);
-            this.Lbl_Title.TabIndex = 2;
-            this.Lbl_Title.Text = "Minecraft Map To Image";
-            this.Lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Lbl_Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Lbl_Title_MouseMove);
-            // 
-            // Pbx_Icon
-            // 
-            this.Pbx_Icon.BackgroundImage = global::Minecraft_Map_Renderer.Properties.Resources.Map;
-            this.Pbx_Icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pbx_Icon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Pbx_Icon.Location = new System.Drawing.Point(0, 0);
-            this.Pbx_Icon.Name = "Pbx_Icon";
-            this.Pbx_Icon.Size = new System.Drawing.Size(48, 40);
-            this.Pbx_Icon.TabIndex = 1;
-            this.Pbx_Icon.TabStop = false;
-            this.Pbx_Icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Lbl_Title_MouseMove);
             // 
             // Tbl_Controls
             // 
@@ -154,6 +129,31 @@
             this.Btn_exit.UseVisualStyleBackColor = true;
             this.Btn_exit.Click += new System.EventHandler(this.Btn_exit_Click);
             // 
+            // Lbl_Title
+            // 
+            this.Lbl_Title.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Title.ForeColor = System.Drawing.Color.White;
+            this.Lbl_Title.Location = new System.Drawing.Point(48, 0);
+            this.Lbl_Title.Name = "Lbl_Title";
+            this.Lbl_Title.Size = new System.Drawing.Size(192, 40);
+            this.Lbl_Title.TabIndex = 2;
+            this.Lbl_Title.Text = "Minecraft Map To Image";
+            this.Lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Lbl_Title_MouseMove);
+            // 
+            // Pbx_Icon
+            // 
+            this.Pbx_Icon.BackgroundImage = global::Minecraft_Map_Renderer.Properties.Resources.Map;
+            this.Pbx_Icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pbx_Icon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Pbx_Icon.Location = new System.Drawing.Point(0, 0);
+            this.Pbx_Icon.Name = "Pbx_Icon";
+            this.Pbx_Icon.Size = new System.Drawing.Size(48, 40);
+            this.Pbx_Icon.TabIndex = 1;
+            this.Pbx_Icon.TabStop = false;
+            this.Pbx_Icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Lbl_Title_MouseMove);
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -167,21 +167,20 @@
             this.Move += new System.EventHandler(this.BaseForm_Move);
             this.Pnl_MainContainer.ResumeLayout(false);
             this.Pnl_Topbar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Icon)).EndInit();
             this.Tbl_Controls.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Pbx_Icon)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel Pnl_MainContainer;
-        private System.Windows.Forms.Panel Pnl_Topbar;
-        private System.Windows.Forms.PictureBox Pbx_Icon;
-        private System.Windows.Forms.Label Lbl_Title;
-        private System.Windows.Forms.TableLayoutPanel Tbl_Controls;
-        private System.Windows.Forms.Button Btn_minimize;
-        private System.Windows.Forms.Button Btn_resize;
-        private System.Windows.Forms.Button Btn_exit;
+        protected System.Windows.Forms.TableLayoutPanel Tbl_Controls;
+        protected System.Windows.Forms.Button Btn_exit;
+        protected System.Windows.Forms.Button Btn_minimize;
+        protected System.Windows.Forms.Button Btn_resize;
+        protected System.Windows.Forms.Panel Pnl_Topbar;
+        protected System.Windows.Forms.Label Lbl_Title;
+        protected System.Windows.Forms.PictureBox Pbx_Icon;
+        protected System.Windows.Forms.Panel Pnl_MainContainer;
     }
 }
