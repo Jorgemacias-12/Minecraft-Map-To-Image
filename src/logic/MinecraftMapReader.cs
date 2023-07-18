@@ -26,6 +26,8 @@ namespace Minecraft_Map_Renderer.src.logic
 
             string MinecraftMapsPath = Path.Combine(SavePath, "data");
 
+            if (!Directory.Exists(MinecraftMapsPath)) return null;
+            
             string[] MapsPath = await Task.Run(() => Directory.GetFiles(MinecraftMapsPath, "map_*.dat"));
 
             foreach(string MapFilePath in MapsPath)

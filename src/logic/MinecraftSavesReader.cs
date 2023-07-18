@@ -6,28 +6,36 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Minecraft_Map_Renderer.src.logic
 {
     public class MinecraftSavesReader
     {
-        private MinecraftSaves MSaves;
         private MinecraftSave Save;
         private MinecraftMapReader MapsReader;
         private readonly static string APPDATA_PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        private readonly static string MINECRAFT_SAVES_PATH = Path.Combine(APPDATA_PATH, ".minecraft", "saves");
+        private static string MINECRAFT_SAVES_PATH = Path.Combine(APPDATA_PATH, ".minecraft", "saves");
     
         public MinecraftSavesReader()
         {
 
         }
 
+        // TODO: Implement a configurable way to 
+        // read any saves in any folder
+        // I might use a custom form to do that.
         public async Task LoadSaves(List<MinecraftSave> Saves)
         {
             MapsReader = new MinecraftMapReader();
 
             try
             {
+                if (!Directory.Exists(MINECRAFT_SAVES_PATH))
+                {
+                    return;
+                }
+
                 string[] MinecraftSavesPath = await Task.Run(() => Directory.GetDirectories(MINECRAFT_SAVES_PATH));
 
                 foreach(string MinecraftSavePath in MinecraftSavesPath)
@@ -35,18 +43,20 @@ namespace Minecraft_Map_Renderer.src.logic
                     Save = new MinecraftSave(Path.GetFileName(MinecraftSavePath),
                                              MinecraftSavePath,
                                              ReadVersion(MinecraftSavePath),
-                                             ReadSplashIcon(MinecraftSavePath), null);
-                    // Read maps here
+                                             ReadSplashIcon(MinecraftSavePath), 
+                                             null);
+
+                    if (Save is null) return;
+
                     Save.Maps = await MapsReader.LoadMaps(MinecraftSavePath, Save.Version);
-                    
+
                     Saves.Add(Save);
 
                     Save.HasMaps = true;
                 }
-
             }
 
-            catch(FileNotFoundException)
+            catch (Exception)
             {
                 Save.HasMaps = false;
             }
@@ -56,10 +66,10 @@ namespace Minecraft_Map_Renderer.src.logic
         {
             string LevelDatPath = Path.Combine(MinecraftSavePath, "level.dat");
 
-            NbtFile nbtFile = new NbtFile(LevelDatPath);
-
             try
             {
+                NbtFile nbtFile = new NbtFile(LevelDatPath);
+                
                 nbtFile.LoadFromFile(LevelDatPath);
 
                 NbtCompound rootCompound = nbtFile.RootTag;
@@ -72,14 +82,19 @@ namespace Minecraft_Map_Renderer.src.logic
 
                 return Version.StringValue;
             }
-            catch (Exception) { }
-
-            return "";
+            catch (Exception) 
+            {
+                return "Save corrupted";
+            }
         }
 
         private Image ReadSplashIcon(string MinecraftSavePath)
         {
-            return Image.FromFile($"{MinecraftSavePath}\\icon.png");
+            try
+            {
+                return Image.FromFile($"{MinecraftSavePath}\\icon.png");
+            }
+            catch (Exception) { return null; }
         }
     }
 }
