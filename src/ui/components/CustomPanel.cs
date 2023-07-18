@@ -23,7 +23,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
         {
             Border = new Border();
 
-            Border.AllSize = 1;
+            Border.AllSize = 0;
             Border.AllColor = Color.White;
         }
 
