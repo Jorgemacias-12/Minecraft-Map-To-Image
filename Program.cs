@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Minecraft_Map_Renderer.src.ui.forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Minecraft_Map_Renderer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MinecraftMapsForm());
+            Application.Run(new MinecraftMapToImageForm());
         }
     }
 }
