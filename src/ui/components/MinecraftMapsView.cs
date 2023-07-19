@@ -42,6 +42,8 @@ namespace Minecraft_Map_Renderer.src.ui.components
             {
                 if (Save.Name != _Save) continue;
 
+                if (Save.Maps is null) continue;
+
                 foreach(MinecraftMap map in Save.Maps)
                 {
 
