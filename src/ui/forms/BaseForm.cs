@@ -49,12 +49,8 @@ namespace Minecraft_Map_Renderer.src.ui.forms
         {
             WindowInitialSize = new Rectangle(Location.X, Location.Y, Width, Height);
 
-            // Hide the maximize button
-            /*if (!Maximize)
-            {
-                Btn_resize.Visible = ;
-            } 
-            */
+            Tbl_Controls.ColumnStyles[1] = Maximize ? new ColumnStyle(SizeType.Percent, 33.3f) :
+                                                      new ColumnStyle(SizeType.Absolute, 0);
 
             Btn_resize.Visible = Maximize;
         }
