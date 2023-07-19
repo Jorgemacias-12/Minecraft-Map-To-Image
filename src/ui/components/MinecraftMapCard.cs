@@ -1,4 +1,5 @@
 ﻿using Minecraft_Map_Renderer.src.logic;
+using Minecraft_Map_Renderer.src.ui.forms;
 using Minecraft_Map_Renderer.src.utils;
 using System;
 using System.Collections.Generic;
@@ -45,9 +46,9 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
         private void HandleShowMapInfo(object sender, EventArgs e)
         {
-            MinecraftMapForm MapForm = new MinecraftMapForm(Map);
+           MinecraftMapViewForm MapView = new MinecraftMapViewForm(Map);
 
-            MapForm.Show();
+           MapView.ShowDialog();
         }
 
     }
