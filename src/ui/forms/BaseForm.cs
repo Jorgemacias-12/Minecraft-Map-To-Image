@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -17,6 +18,8 @@ namespace Minecraft_Map_Renderer.src.ui.forms
         private const int WM_SYSCOMMAND = 0x112;
         private const int MOUSE_MOVE = 0xF012;
         private const int WM_LPARAM = 0;
+        private const int WM_FONTCHANGE = 0x1a;
+        private const int HWND_BROADCAST = 0x1d;
         #endregion
 
         #region Form Constants
@@ -26,6 +29,11 @@ namespace Minecraft_Map_Renderer.src.ui.forms
 
         #region Form variables
         private bool isMaximized = false;
+
+        [Category("Behavior")]
+        [Browsable(true)]
+        [Description("Allows to hide the maximize/minimize button of the window")]
+        public bool Maximize { get; set; }
         #endregion
 
         #region Base Form constructor
@@ -40,6 +48,15 @@ namespace Minecraft_Map_Renderer.src.ui.forms
         private void BaseForm_Load(object sender, EventArgs e)
         {
             WindowInitialSize = new Rectangle(Location.X, Location.Y, Width, Height);
+
+            // Hide the maximize button
+            /*if (!Maximize)
+            {
+                Btn_resize.Visible = ;
+            } 
+            */
+
+            Btn_resize.Visible = Maximize;
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
@@ -47,6 +64,9 @@ namespace Minecraft_Map_Renderer.src.ui.forms
 
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(IntPtr hwnd, int wsmg, int wparam, int lparam);
+
+        [DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
+        public static extern int AddFontResource(string lpFileName);
 
         private void Pnl_Topbar_MouseDown(object sender, MouseEventArgs e)
         {
@@ -83,6 +103,12 @@ namespace Minecraft_Map_Renderer.src.ui.forms
 
         private void Btn_exit_Click(object sender, EventArgs e)
         {
+            if (Modal)
+            {
+                Dispose();
+                return;
+            }
+
             Application.Exit();
         }
 

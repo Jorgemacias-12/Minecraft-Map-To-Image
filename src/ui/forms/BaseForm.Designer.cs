@@ -132,11 +132,11 @@
             // Lbl_Title
             // 
             this.Lbl_Title.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Title.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Title.ForeColor = System.Drawing.Color.White;
             this.Lbl_Title.Location = new System.Drawing.Point(48, 0);
             this.Lbl_Title.Name = "Lbl_Title";
-            this.Lbl_Title.Size = new System.Drawing.Size(192, 40);
+            this.Lbl_Title.Size = new System.Drawing.Size(201, 40);
             this.Lbl_Title.TabIndex = 2;
             this.Lbl_Title.Text = "Minecraft Map To Image";
             this.Lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,6 +160,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.Pnl_MainContainer);
+            this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BaseForm";
