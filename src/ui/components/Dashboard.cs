@@ -31,7 +31,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
         private async void Dashboard_Load(object sender, EventArgs e)
         {
             await MinecraftSaves.Instance.ReadSaves();
-
+            
             foreach(MinecraftSave Save in minecraftSaves.Saves)
             {
                 MinecraftSaveView view = new MinecraftSaveView(Save.SplashIcon, Save.Name)
