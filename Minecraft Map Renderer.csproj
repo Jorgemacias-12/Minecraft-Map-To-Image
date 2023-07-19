@@ -88,23 +88,23 @@
     <Compile Include="src\ui\forms\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\ui\MinecraftMapForm.cs">
+    <Compile Include="src\ui\forms\MinecraftMapToImageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\ui\MinecraftMapForm.Designer.cs">
-      <DependentUpon>MinecraftMapForm.cs</DependentUpon>
+    <Compile Include="src\ui\forms\MinecraftMapToImageForm.Designer.cs">
+      <DependentUpon>MinecraftMapToImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftMapViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftMapViewForm.Designer.cs">
+      <DependentUpon>MinecraftMapViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\ui\components\MinecraftMapsView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="src\ui\components\MinecraftSaveView.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="src\ui\MinecraftMapsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\ui\MinecraftMapsForm.Designer.cs">
-      <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\utils\Border.cs" />
     <Compile Include="src\utils\ImageFormats.cs" />
@@ -124,11 +124,11 @@
     <EmbeddedResource Include="src\ui\forms\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ui\MinecraftMapForm.resx">
-      <DependentUpon>MinecraftMapForm.cs</DependentUpon>
+    <EmbeddedResource Include="src\ui\forms\MinecraftMapToImageForm.resx">
+      <DependentUpon>MinecraftMapToImageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ui\MinecraftMapsForm.resx">
-      <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
+    <EmbeddedResource Include="src\ui\forms\MinecraftMapViewForm.resx">
+      <DependentUpon>MinecraftMapViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
