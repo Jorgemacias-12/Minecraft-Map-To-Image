@@ -58,6 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="src\logic\Minecraft.cs" />
     <Compile Include="src\logic\MinecraftMap.cs" />
     <Compile Include="src\logic\MinecraftMapReader.cs" />
     <Compile Include="src\logic\MinecraftMapRenderer.cs" />
