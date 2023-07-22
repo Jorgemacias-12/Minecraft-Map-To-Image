@@ -53,16 +53,23 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="src\logic\MinecraftMap.cs" />
+    <Compile Include="src\logic\MinecraftMapReader.cs" />
     <Compile Include="src\logic\MinecraftMapRenderer.cs" />
-    <Compile Include="src\logic\MinecraftMapsReader.cs" />
-    <Compile Include="src\logic\MinecraftMaps.cs" />
     <Compile Include="src\logic\MinecraftSave.cs" />
     <Compile Include="src\logic\MinecraftSaves.cs" />
     <Compile Include="src\logic\MinecraftSavesReader.cs" />
     <Compile Include="src\logic\MinecraftVersion.cs" />
     <Compile Include="src\logic\MinecraftVersionReader.cs" />
     <Compile Include="src\logic\MinecraftVersions.cs" />
+    <Compile Include="src\ui\components\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="src\ui\components\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,37 +82,53 @@
     <Compile Include="src\ui\components\MinecraftMapCard.Designer.cs">
       <DependentUpon>MinecraftMapCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\ui\forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ui\forms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftMapToImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftMapToImageForm.Designer.cs">
+      <DependentUpon>MinecraftMapToImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftMapViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftMapViewForm.Designer.cs">
+      <DependentUpon>MinecraftMapViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\ui\components\MinecraftMapsView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="src\ui\components\MinecraftSaveView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="src\ui\MinecraftMapsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\ui\MinecraftMapsForm.Designer.cs">
-      <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="src\utils\Border.cs" />
+    <Compile Include="src\utils\ImageFormats.cs" />
     <Compile Include="src\utils\MinecraftColorsTable.cs" />
+    <Compile Include="src\utils\MinecraftDimensions.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="src\ui\components\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\ui\components\MinecraftMapCard.resx">
       <DependentUpon>MinecraftMapCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ui\MinecraftMapsForm.resx">
-      <DependentUpon>MinecraftMapsForm.cs</DependentUpon>
+    <EmbeddedResource Include="src\ui\forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ui\forms\MinecraftMapToImageForm.resx">
+      <DependentUpon>MinecraftMapToImageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ui\forms\MinecraftMapViewForm.resx">
+      <DependentUpon>MinecraftMapViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -123,7 +146,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="src\resources\config.png" />
+    <None Include="src\resources\Map.png" />
     <Content Include="src\resources\minus-solid.png" />
+    <Content Include="src\resources\reload.png.png" />
     <Content Include="src\resources\window-maximize-solid.png" />
     <Content Include="src\resources\window-restore-solid.png" />
     <Content Include="src\resources\xmark-solid.png" />

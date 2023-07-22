@@ -8,10 +8,16 @@ namespace Minecraft_Map_Renderer.src.logic
 {
     public class MinecraftSaves
     {
-        #region Singleton Implementation
         private static MinecraftSaves _Instance;
         private static readonly object _Lock = new object();
         private MinecraftSavesReader _Reader;
+        
+        public List<MinecraftSave> Saves { get; set; } = new List<MinecraftSave>();
+
+        private MinecraftSaves() 
+        { 
+            _Reader = new MinecraftSavesReader();
+        }
 
         public static MinecraftSaves Instance
         {
@@ -28,25 +34,16 @@ namespace Minecraft_Map_Renderer.src.logic
                 return _Instance;
             }
         }
-        #endregion
 
-        #region Class Variables
-        public readonly List<MinecraftSave> Saves = new List<MinecraftSave>();
-        #endregion
-
-        #region Class Constructor
-        private MinecraftSaves()
+        public async Task ReadSaves()
         {
-            _Reader = new MinecraftSavesReader();
-        }
-        #endregion
+            if (Saves.Count != 0)
+            {
+                Saves.Clear();
+            } 
 
-        #region Class Methods
-        public async Task ReadSavesAsync()
-        {
             await _Reader.LoadSaves(Saves);
         }
-        #endregion
-        
+
     }
 }

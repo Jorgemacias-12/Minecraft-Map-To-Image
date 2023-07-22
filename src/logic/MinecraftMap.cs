@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,38 +9,85 @@ namespace Minecraft_Map_Renderer.src.logic
 {
     public class MinecraftMap
     {
-        #region Class Constants
-        private const int MINECRAFT_MAP_COLORS_SIZE = 16384;
-        #endregion
+        private const int MAP_BYTE_SIZE = 16384;
+        private Bitmap _Image;
 
-        #region Class Variables
-        public string Dimension { get; private set; }
-        public Byte Locked { get; private set; }
-        public Byte Scale { get; private set; }
-        public Byte TrackingPosition { get; private set; }
-        public Byte UnlimitedTracking { get; private set; }
-        public int XCenter { get; private set; }
-        public int ZCenter { get; private set; }
-        public Byte[] Colors = new byte[MINECRAFT_MAP_COLORS_SIZE];
-        public string Name { get; private set; }
+        public string Name { get; set; } 
+        public string Path { get; set; }
+        public string Dimension { get; set; }
+        public byte Locked { get; set; }
+        public byte Scale { get; set; }
+        public byte TrackingPosition { get; set; }
+        public byte UnlimitedTracking { get; set; }
+        public int XCenter { get; set; } 
+        public int ZCenter { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
 
-        public MinecraftMap(string dimension, byte locked, byte scale, byte trackingPosition, byte unlimitedTracking, int xCenter, int zCenter, byte[] colors, string name)
+        public Bitmap Image
         {
-            Dimension = dimension ?? throw new ArgumentNullException(nameof(dimension));
+            get
+            {
+                if (_Image == null)
+                {
+                    _Image = MinecraftMapRenderer.DrawMap(Colors, 128, 128);
+                }
+
+                return _Image;
+            }
+            set
+            {
+                _Image = value;
+            }
+        }
+
+        public byte[] Colors = new byte[MAP_BYTE_SIZE];
+
+        public MinecraftMap(string name,
+                            string path,
+                            string dimension,
+                            byte locked, 
+                            byte scale, 
+                            byte trackingPosition, 
+                            byte unlimitedTracking, 
+                            int xCenter, 
+                            int zCenter, 
+                            byte[] colors)
+        {
+            Name = name;
+            Path = path;
+            Dimension = dimension;
             Locked = locked;
             Scale = scale;
             TrackingPosition = trackingPosition;
             UnlimitedTracking = unlimitedTracking;
             XCenter = xCenter;
             ZCenter = zCenter;
-            Colors = colors ?? throw new ArgumentNullException(nameof(colors));
-            Name = name ?? throw new ArgumentNullException(nameof(name));
+            Colors = colors;
         }
 
-        #endregion
-
-        #region Class Constructor
-
-        #endregion
+        public MinecraftMap(string name,
+                            string path, 
+                            string dimension, 
+                            byte scale,
+                            byte trackingPosition, 
+                            byte unlimitedTracking,
+                            int xCenter, int zCenter,
+                            int width, 
+                            int height, 
+                            byte[] colors)
+        {
+            Name = name;
+            Path = path;
+            Dimension = dimension;
+            Scale = scale;
+            TrackingPosition = trackingPosition;
+            UnlimitedTracking = unlimitedTracking;
+            XCenter = xCenter;
+            ZCenter = zCenter;
+            Width = width;
+            Height = height;
+            Colors = colors;
+        }
     }
 }

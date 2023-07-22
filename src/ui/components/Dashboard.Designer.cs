@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.Lbl_title = new System.Windows.Forms.Label();
             this.Flp_SavesContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.Flp_Info = new System.Windows.Forms.FlowLayoutPanel();
+            this.Btn_config = new System.Windows.Forms.Button();
+            this.BtnReload = new System.Windows.Forms.Button();
+            this.Flp_Info.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lbl_title
@@ -64,12 +68,48 @@
             // Flp_Info
             // 
             this.Flp_Info.BackColor = System.Drawing.Color.Transparent;
+            this.Flp_Info.Controls.Add(this.Btn_config);
+            this.Flp_Info.Controls.Add(this.BtnReload);
             this.Flp_Info.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Flp_Info.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Flp_Info.Location = new System.Drawing.Point(0, 580);
             this.Flp_Info.Name = "Flp_Info";
             this.Flp_Info.Size = new System.Drawing.Size(313, 46);
             this.Flp_Info.TabIndex = 2;
+            // 
+            // Btn_config
+            // 
+            this.Btn_config.AutoSize = true;
+            this.Btn_config.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_config.BackgroundImage")));
+            this.Btn_config.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Btn_config.FlatAppearance.BorderSize = 0;
+            this.Btn_config.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(139)))), ((int)(((byte)(155)))));
+            this.Btn_config.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.Btn_config.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_config.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_config.Location = new System.Drawing.Point(3, 3);
+            this.Btn_config.Name = "Btn_config";
+            this.Btn_config.Size = new System.Drawing.Size(50, 43);
+            this.Btn_config.TabIndex = 0;
+            this.Btn_config.UseVisualStyleBackColor = true;
+            this.Btn_config.Click += new System.EventHandler(this.Btn_config_Click);
+            // 
+            // BtnReload
+            // 
+            this.BtnReload.AutoSize = true;
+            this.BtnReload.BackgroundImage = global::Minecraft_Map_Renderer.Properties.Resources.reload_png;
+            this.BtnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnReload.FlatAppearance.BorderSize = 0;
+            this.BtnReload.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(139)))), ((int)(((byte)(155)))));
+            this.BtnReload.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.BtnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReload.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnReload.Location = new System.Drawing.Point(59, 3);
+            this.BtnReload.Name = "BtnReload";
+            this.BtnReload.Size = new System.Drawing.Size(53, 40);
+            this.BtnReload.TabIndex = 1;
+            this.BtnReload.UseVisualStyleBackColor = true;
+            this.BtnReload.Click += new System.EventHandler(this.BtnReload_Click);
             // 
             // Dashboard
             // 
@@ -82,6 +122,8 @@
             this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(313, 626);
             this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.Flp_Info.ResumeLayout(false);
+            this.Flp_Info.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -91,5 +133,7 @@
         private System.Windows.Forms.Label Lbl_title;
         private System.Windows.Forms.FlowLayoutPanel Flp_SavesContainer;
         private System.Windows.Forms.FlowLayoutPanel Flp_Info;
+        private System.Windows.Forms.Button Btn_config;
+        private System.Windows.Forms.Button BtnReload;
     }
 }

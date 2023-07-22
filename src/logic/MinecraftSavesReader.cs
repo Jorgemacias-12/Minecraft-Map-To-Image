@@ -12,55 +12,64 @@ namespace Minecraft_Map_Renderer.src.logic
 {
     public class MinecraftSavesReader
     {
-        #region Class Variables
-        #endregion
-
-        #region Class Constants 
+        private MinecraftSave Save;
+        private MinecraftMapReader MapsReader;
         private readonly static string APPDATA_PATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        private readonly static string MINECRAFT_SAVES_PATH = Path.Combine(APPDATA_PATH, ".minecraft", "saves");
-        #endregion
-
-        #region Class Constructor
+        private static string MINECRAFT_SAVES_PATH = Path.Combine(APPDATA_PATH, ".minecraft", "saves");
+    
         public MinecraftSavesReader()
         {
 
         }
-        #endregion
 
-
-        #region Class Methods
-
-        public async Task LoadSaves(List<MinecraftSave> MinecraftSavesList)
+        // TODO: Implement a configurable way to 
+        // read any saves in any folder
+        // I might use a custom form to do that.
+        public async Task LoadSaves(List<MinecraftSave> Saves)
         {
-            if (!Directory.Exists(MINECRAFT_SAVES_PATH))
-            {
-                throw new FileNotFoundException("Minecraft path not found");
-            }
-
-            string[] MinecraftSavesPath = await Task.Run(() => Directory.GetDirectories(MINECRAFT_SAVES_PATH));
-
-            foreach (string MinecraftSavePath in MinecraftSavesPath)
-            {
-                MinecraftSave minecraftSave = new MinecraftSave(
-                    ReadSaveVersion(MinecraftSavePath),
-                    Path.GetFileName(MinecraftSavePath),
-                    MinecraftSavePath,
-                    ReadSaveSplashImage(MinecraftSavePath)
-                );
-
-                MinecraftSavesList.Add(minecraftSave);
-            }
-        }
-
-
-        private string ReadSaveVersion(string MinecraftSavePath)
-        {
-            string LevelDatPath = Path.Combine(MinecraftSavePath, "level.dat");
-
-            NbtFile nbtFile = new NbtFile(LevelDatPath);
+            MapsReader = new MinecraftMapReader();
 
             try
             {
+                if (!Directory.Exists(MINECRAFT_SAVES_PATH))
+                {
+                    return;
+                }
+
+                string[] MinecraftSavesPath = await Task.Run(() => Directory.GetDirectories(MINECRAFT_SAVES_PATH));
+
+                foreach(string MinecraftSavePath in MinecraftSavesPath)
+                {
+                    Save = new MinecraftSave(Path.GetFileName(MinecraftSavePath),
+                                             MinecraftSavePath,
+                                             ReadVersion(MinecraftSavePath),
+                                             ReadSplashIcon(MinecraftSavePath), 
+                                             null);
+
+                    if (Save is null) return;
+
+                    Save.Maps = await MapsReader.LoadMaps(MinecraftSavePath, Save.Version);
+
+                    Saves.Add(Save);
+
+                    Save.HasMaps = true;
+                }
+            }
+
+            catch (Exception)
+            {
+                Save.HasMaps = false;
+            }
+        }
+
+        private string ReadVersion(string MinecraftSavePath)
+        {
+            string LevelDatPath = Path.Combine(MinecraftSavePath, "level.dat");
+
+            try
+            {
+                NbtFile nbtFile = new NbtFile(LevelDatPath);
+                
                 nbtFile.LoadFromFile(LevelDatPath);
 
                 NbtCompound rootCompound = nbtFile.RootTag;
@@ -73,15 +82,19 @@ namespace Minecraft_Map_Renderer.src.logic
 
                 return Version.StringValue;
             }
-            catch (Exception) { }
-
-            return "";
+            catch (Exception) 
+            {
+                return "Save corrupted";
+            }
         }
 
-        private Image ReadSaveSplashImage(string MinecraftSavePath)
+        private Image ReadSplashIcon(string MinecraftSavePath)
         {
-            return Image.FromFile($"{MinecraftSavePath}\\icon.png");
+            try
+            {
+                return Image.FromFile($"{MinecraftSavePath}\\icon.png");
+            }
+            catch (Exception) { return null; }
         }
-        #endregion
     }
 }
