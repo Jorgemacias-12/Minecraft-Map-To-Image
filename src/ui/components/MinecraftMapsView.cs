@@ -11,9 +11,6 @@ namespace Minecraft_Map_Renderer.src.ui.components
 {
     public class MinecraftMapsView : FlowLayoutPanel
     {
-        private event EventHandler<EventArgs> MapSelected;
-        private MinecraftSaves minecraftSaves = MinecraftSaves.Instance;
-
         private string _Save;
 
         public string Save
@@ -38,7 +35,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
             if (Save == "") return;
 
-            foreach(MinecraftSave Save in minecraftSaves.Saves)
+            foreach(MinecraftSave Save in Minecraft.Instance.JavaSaves)
             {
                 if (Save.Name != _Save) continue;
 
@@ -58,6 +55,5 @@ namespace Minecraft_Map_Renderer.src.ui.components
                 }
             }
         }
-
     }
 }
