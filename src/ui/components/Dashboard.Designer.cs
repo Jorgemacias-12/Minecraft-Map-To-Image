@@ -97,7 +97,7 @@
             // BtnReload
             // 
             this.BtnReload.AutoSize = true;
-            this.BtnReload.BackgroundImage = global::Minecraft_Map_Renderer.Properties.Resources.reload_png;
+            this.BtnReload.BackgroundImage = global::Minecraft_Map_Renderer.Properties.Resources.reload;
             this.BtnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnReload.FlatAppearance.BorderSize = 0;
             this.BtnReload.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(139)))), ((int)(((byte)(155)))));
