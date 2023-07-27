@@ -41,16 +41,17 @@ namespace Minecraft_Map_Renderer.src.utils
 
         public static bool TryReadSplashIcon(string SavePath, out Image Icon)
         {
-            if (!Directory.Exists(SavePath))
+            try
             {
-                Icon = Resources.grass_block;
-
-                return false;
+                Icon = Image.FromFile($"{SavePath}\\icon.png");
+                return true;
             }
 
-            Icon = Image.FromFile($"{SavePath}\\icon.png");
-
-            return true;
+            catch(Exception)
+            {
+                Icon = Resources.grass_block;
+                return false;
+            }
         }
     }
 }
