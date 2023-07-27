@@ -36,10 +36,7 @@ namespace Minecraft_Map_Renderer.src.logic
                     MinecraftVersions.Add(MinecraftVersion);
                 }
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch (Exception) { }
         }
         #endregion
     }
