@@ -14,14 +14,13 @@ namespace Minecraft_Map_Renderer.src.ui.components
     public partial class Dashboard : UserControl
     {
         #region Class Variables
-        private readonly MinecraftSaves minecraftSaves = MinecraftSaves.Instance;
         public event EventHandler<EventArgs> ButtonClicked;
+        private const int PADDING = 10;
         #endregion
 
         private Color ButtonHover = Color.FromArgb(52, 58, 64);
         private Color ButtonClick = Color.FromArgb(73, 80, 87);
         private Color ButtonSelected = Color.FromArgb(74, 95, 236);
-        private const int PADDING = 10;
 
         public Dashboard()
         {
@@ -30,9 +29,9 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
         private async void Dashboard_Load(object sender, EventArgs e)
         {
-            await MinecraftSaves.Instance.ReadSaves();
-            
-            foreach(MinecraftSave Save in minecraftSaves.Saves)
+            await Minecraft.Instance.LoadMinecraftData(MinecraftEdition.Java);
+
+            foreach(MinecraftSave Save in Minecraft.Instance.JavaSaves)
             {
                 MinecraftSaveView view = new MinecraftSaveView(Save.SplashIcon, Save.Name)
                 {
@@ -86,10 +85,9 @@ namespace Minecraft_Map_Renderer.src.ui.components
             }
         }
 
-        private async void BtnReload_Click(object sender, EventArgs e)
+        private void BtnReload_Click(object sender, EventArgs e)
         {
             // Reload Maps and saves
-            await MinecraftSaves.Instance.ReadSaves();
         }
 
         private void Btn_config_Click(object sender, EventArgs e)
