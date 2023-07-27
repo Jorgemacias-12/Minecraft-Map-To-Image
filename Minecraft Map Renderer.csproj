@@ -60,13 +60,12 @@
     </Compile>
     <Compile Include="src\logic\Minecraft.cs" />
     <Compile Include="src\logic\MinecraftMap.cs" />
-    <Compile Include="src\logic\MinecraftMapReader.cs" />
+    <Compile Include="src\logic\MinecraftMapsLoader.cs" />
     <Compile Include="src\logic\MinecraftMapRenderer.cs" />
     <Compile Include="src\logic\MinecraftSave.cs" />
-    <Compile Include="src\logic\MinecraftSaves.cs" />
-    <Compile Include="src\logic\MinecraftSavesReader.cs" />
+    <Compile Include="src\logic\MinecraftSavesLoader.cs" />
     <Compile Include="src\logic\MinecraftVersion.cs" />
-    <Compile Include="src\logic\MinecraftVersionReader.cs" />
+    <Compile Include="src\utils\MinecraftVersionReader.cs" />
     <Compile Include="src\logic\MinecraftVersions.cs" />
     <Compile Include="src\ui\components\CustomPanel.cs">
       <SubType>Component</SubType>
@@ -111,6 +110,8 @@
     <Compile Include="src\utils\ImageFormats.cs" />
     <Compile Include="src\utils\MinecraftColorsTable.cs" />
     <Compile Include="src\utils\MinecraftDimensions.cs" />
+    <Compile Include="src\utils\MinecraftMapReader.cs" />
+    <Compile Include="src\utils\MinecraftSaveReader.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -147,10 +148,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="src\resources\grass_block.png" />
     <Content Include="src\resources\config.png" />
     <None Include="src\resources\Map.png" />
     <Content Include="src\resources\minus-solid.png" />
-    <Content Include="src\resources\reload.png.png" />
+    <None Include="src\resources\reload.png" />
     <Content Include="src\resources\window-maximize-solid.png" />
     <Content Include="src\resources\window-restore-solid.png" />
     <Content Include="src\resources\xmark-solid.png" />
