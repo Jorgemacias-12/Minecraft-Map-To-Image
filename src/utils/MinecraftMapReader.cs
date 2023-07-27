@@ -97,6 +97,11 @@ namespace Minecraft_Map_Renderer.src.utils
 
         public static byte ReadTrackingPosition(NbtCompound MapData)
         {
+            if (!MapData.Contains("trackingPosition"))
+            {
+                return NOT_USED_IN_VERSION;
+            }
+
             return MapData.Get<NbtByte>("trackingPosition").ByteValue;
         }
 
