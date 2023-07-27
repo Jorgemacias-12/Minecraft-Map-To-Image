@@ -40,6 +40,11 @@ namespace Minecraft_Map_Renderer.src.ui.components
                     BorderRadius = 5
                 };
 
+                if (!Save.HasSplashIcon)
+                {
+                    view.BackgroundImageLayout = ImageLayout.None;
+                }
+
                 view.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 58, 64);
                 view.FlatAppearance.MouseDownBackColor = Color.FromArgb(73, 80, 87);
                 view.TextAlign = ContentAlignment.MiddleRight;
