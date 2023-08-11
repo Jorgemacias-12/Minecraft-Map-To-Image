@@ -126,7 +126,7 @@ namespace Minecraft_Map_Renderer.src.logic
             {
                 case MinecraftEdition.Java:
 
-                    await _Loader.LoadSaves(JavaSaves, MinecraftEdition.Java);
+                    await _Loader.LoadSaves(JavaSaves, edition);
 
                     foreach(MinecraftSave save in JavaSaves)
                     {
@@ -137,7 +137,7 @@ namespace Minecraft_Map_Renderer.src.logic
 
                 case MinecraftEdition.Bedrock:
 
-                    await _Loader.LoadSaves(BedrockSaves, MinecraftEdition.Bedrock);
+                    await _Loader.LoadSaves(BedrockSaves, edition);
                     
                     break;
             }
