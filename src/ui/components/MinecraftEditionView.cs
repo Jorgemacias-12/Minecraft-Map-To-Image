@@ -16,6 +16,7 @@ namespace Minecraft_Map_Renderer.src.ui.forms
         private Image _Image;
         private String _EditionName;
         private MinecraftEdition _Edition;
+        private MinecraftEditionMapViewerForm _Form;
 
         public Image Image
         {
@@ -65,7 +66,7 @@ namespace Minecraft_Map_Renderer.src.ui.forms
         private void SetImage()
         {
             Pbx_Edition.BackgroundImage = _Image;
-            Pbx_Edition.BackgroundImageLayout = ImageLayout.Stretch;
+            Pbx_Edition.BackgroundImageLayout = ImageLayout.Zoom;
         }
  
         private void SetName()
@@ -84,7 +85,12 @@ namespace Minecraft_Map_Renderer.src.ui.forms
             {
                 case MinecraftEdition.Java:
 
-                    new MinecraftMapToImageForm().Show();
+                    //new MinecraftEditionMapViewerForm().Show();
+                    _Form = new MinecraftEditionMapViewerForm();
+
+                    _Form.Show();
+
+                    _Form.Edition = MinecraftEdition.Java;
 
                     parent.Close();
 
