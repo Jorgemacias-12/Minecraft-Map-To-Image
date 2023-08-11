@@ -1,4 +1,5 @@
 ﻿using Minecraft_Map_Renderer.src.logic;
+using Minecraft_Map_Renderer.src.ui.forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,8 +30,35 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
         private async void Dashboard_Load(object sender, EventArgs e)
         {
-            await Minecraft.Instance.LoadMinecraftData(MinecraftEdition.Java);
+            await ShowSaves();
+        }
 
+
+        private async Task ShowSaves()
+        {
+            MinecraftEditionMapViewerForm form = (MinecraftEditionMapViewerForm) FindForm();
+
+            await Minecraft.Instance.LoadMinecraftData(form.Edition);
+
+            switch (form.Edition)
+            {
+                case MinecraftEdition.Java:
+
+                    ReadJavaData();
+
+                    break;
+
+                case MinecraftEdition.Bedrock:
+
+                    await ReadBedrockData();
+                    
+                    break;
+            }
+
+        }
+
+        private void ReadJavaData()
+        {
             foreach(MinecraftSave Save in Minecraft.Instance.JavaSaves)
             {
                 MinecraftSaveView view = new MinecraftSaveView(Save.SplashIcon, Save.Name)
@@ -45,8 +73,8 @@ namespace Minecraft_Map_Renderer.src.ui.components
                     view.BackgroundImageLayout = ImageLayout.None;
                 }
 
-                view.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 58, 64);
-                view.FlatAppearance.MouseDownBackColor = Color.FromArgb(73, 80, 87);
+                view.FlatAppearance.MouseOverBackColor = ButtonHover;
+                view.FlatAppearance.MouseDownBackColor = ButtonClick;
                 view.TextAlign = ContentAlignment.MiddleRight;
                 view.Margin = new Padding(10, 5, 10, 5);
                 view.Padding = new Padding(PADDING, 0, 0, 0);
@@ -55,6 +83,12 @@ namespace Minecraft_Map_Renderer.src.ui.components
 
                 Flp_SavesContainer.Controls.Add(view);
             }
+        }
+
+        private async Task ReadBedrockData()
+        {
+            // TODO: implement and find a way to read bedrock data :P
+            await Task.Delay(1000);
         }
 
         private void HandleVisualIndicator(object sender)
@@ -73,7 +107,7 @@ namespace Minecraft_Map_Renderer.src.ui.components
             }
 
             _.FlatAppearance.MouseOverBackColor = ButtonSelected;
-            _.BackColor = ButtonSelected;
+            _.BackColor = ButtonSelected; 
         }
 
         private void MinecraftSaveViewClicked(object sender, EventArgs e)
