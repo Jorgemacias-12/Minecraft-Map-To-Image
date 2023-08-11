@@ -85,7 +85,7 @@ namespace Minecraft_Map_Renderer.src.ui.forms
 
         private async void Timer_Tick(object sender, EventArgs e)
         {
-            if (!IsFormOpen(Application.OpenForms, typeof(MinecraftMapToImageForm)) &&
+            if (!IsFormOpen(Application.OpenForms, typeof(MinecraftEditionMapViewerForm)) &&
                 form is null)
             {
                 progressCurrentValue += progressStep;
