@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="fNbt">
       <HintPath>src\libraries\fNbt.dll</HintPath>
@@ -65,6 +68,30 @@
     <Compile Include="src\logic\MinecraftSave.cs" />
     <Compile Include="src\logic\MinecraftSavesLoader.cs" />
     <Compile Include="src\logic\MinecraftVersion.cs" />
+    <Compile Include="src\ui\forms\MinecraftEditionMapViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftEditionMapViewerForm.Designer.cs">
+      <DependentUpon>MinecraftEditionMapViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftSplashScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftSplashScreenForm.Designer.cs">
+      <DependentUpon>MinecraftSplashScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftEditionSelectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ui\forms\MinecraftEditionSelectorForm.Designer.cs">
+      <DependentUpon>MinecraftEditionSelectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ui\components\MinecraftEditionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\ui\components\MinecraftEditionView.Designer.cs">
+      <DependentUpon>MinecraftEditionView.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\utils\MinecraftVersionReader.cs" />
     <Compile Include="src\logic\MinecraftVersions.cs" />
     <Compile Include="src\ui\components\CustomPanel.cs">
@@ -87,12 +114,6 @@
     </Compile>
     <Compile Include="src\ui\forms\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\ui\forms\MinecraftMapToImageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\ui\forms\MinecraftMapToImageForm.Designer.cs">
-      <DependentUpon>MinecraftMapToImageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\ui\forms\MinecraftMapViewForm.cs">
       <SubType>Form</SubType>
@@ -126,11 +147,20 @@
     <EmbeddedResource Include="src\ui\forms\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\ui\forms\MinecraftMapToImageForm.resx">
-      <DependentUpon>MinecraftMapToImageForm.cs</DependentUpon>
+    <EmbeddedResource Include="src\ui\components\MinecraftEditionView.resx">
+      <DependentUpon>MinecraftEditionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ui\forms\MinecraftEditionMapViewerForm.resx">
+      <DependentUpon>MinecraftEditionMapViewerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\ui\forms\MinecraftMapViewForm.resx">
       <DependentUpon>MinecraftMapViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ui\forms\MinecraftSplashScreenForm.resx">
+      <DependentUpon>MinecraftSplashScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ui\forms\MinecraftEditionSelectorForm.resx">
+      <DependentUpon>MinecraftEditionSelectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -149,10 +179,21 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="src\resources\grass_block.png" />
+    <None Include="src\resources\blackstone_block.png" />
+    <None Include="src\resources\coal_block.png" />
+    <None Include="src\resources\bedrock_block.png" />
     <Content Include="src\resources\config.png" />
     <None Include="src\resources\Map.png" />
+    <None Include="src\resources\deepslate_block.png" />
+    <None Include="src\resources\emerald_block.png" />
+    <None Include="src\resources\gravel_block.png" />
+    <None Include="src\resources\glass_block_3d.png" />
     <Content Include="src\resources\minus-solid.png" />
     <None Include="src\resources\reload.png" />
+    <None Include="src\resources\mud_block.png" />
+    <None Include="src\resources\netherite_block.png" />
+    <None Include="src\resources\netherrack_block.png" />
+    <None Include="src\resources\obsidian_block.png" />
     <Content Include="src\resources\window-maximize-solid.png" />
     <Content Include="src\resources\window-restore-solid.png" />
     <Content Include="src\resources\xmark-solid.png" />
