@@ -17,7 +17,12 @@ namespace Minecraft_Map_Renderer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MinecraftMapToImageForm());
+
+            MinecraftSplashScreenForm form = new MinecraftSplashScreenForm();
+
+            form.Show();
+
+            Application.Run();
         }
     }
 }
