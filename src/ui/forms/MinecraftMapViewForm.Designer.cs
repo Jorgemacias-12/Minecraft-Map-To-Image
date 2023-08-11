@@ -403,6 +403,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Name = "MinecraftMapViewForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MinecraftMapViewForm";
             this.Load += new System.EventHandler(this.MinecraftMapViewForm_Load);
             this.Pnl_Topbar.ResumeLayout(false);
