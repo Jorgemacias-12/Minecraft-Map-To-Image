@@ -1,4 +1,6 @@
-﻿namespace Minecraft_Map_Renderer.src.ui.forms
+﻿using Minecraft_Map_Renderer.src.ui.components;
+
+namespace Minecraft_Map_Renderer.src.ui.forms
 {
     partial class MinecraftSplashScreenForm
     {
@@ -31,7 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MinecraftSplashScreenForm));
             this.Pnl_bottom = new System.Windows.Forms.Panel();
             this.Lbl_LoadingCaption = new System.Windows.Forms.Label();
-            this.Pgb_SplashScreen = new System.Windows.Forms.ProgressBar();
+            this.Pgb_SplashScreen = new Minecraft_Map_Renderer.src.ui.components.JProgressBar();
             this.Pnl_Top = new System.Windows.Forms.Panel();
             this.Lbl_Title = new System.Windows.Forms.Label();
             this.Pnl_bottom.SuspendLayout();
@@ -65,9 +67,12 @@
             // 
             // Pgb_SplashScreen
             // 
+            this.Pgb_SplashScreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.Pgb_SplashScreen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.Pgb_SplashScreen.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Pgb_SplashScreen.Location = new System.Drawing.Point(10, 37);
             this.Pgb_SplashScreen.Name = "Pgb_SplashScreen";
+            this.Pgb_SplashScreen.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.Pgb_SplashScreen.Size = new System.Drawing.Size(600, 23);
             this.Pgb_SplashScreen.TabIndex = 0;
             // 
@@ -123,7 +128,7 @@
 
         #endregion
         private System.Windows.Forms.Panel Pnl_bottom;
-        private System.Windows.Forms.ProgressBar Pgb_SplashScreen;
+        private JProgressBar Pgb_SplashScreen;
         private System.Windows.Forms.Panel Pnl_Top;
         private System.Windows.Forms.Label Lbl_Title;
         private System.Windows.Forms.Label Lbl_LoadingCaption;

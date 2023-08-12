@@ -69,6 +69,7 @@ namespace Minecraft_Map_Renderer.src.ui.forms
 
             Lbl_Title.BackColor = Colors[index];
             Lbl_LoadingCaption.ForeColor = Colors[index];
+            Pgb_SplashScreen.ProgressColor = Colors[index];
         }
 
         private void SplashScreenLoad()

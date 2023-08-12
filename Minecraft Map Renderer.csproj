@@ -68,6 +68,9 @@
     <Compile Include="src\logic\MinecraftSave.cs" />
     <Compile Include="src\logic\MinecraftSavesLoader.cs" />
     <Compile Include="src\logic\MinecraftVersion.cs" />
+    <Compile Include="src\ui\components\JProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="src\ui\forms\MinecraftEditionMapViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
