@@ -49,6 +49,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="fNbt">
       <HintPath>src\libraries\fNbt.dll</HintPath>
@@ -78,6 +81,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,6 +113,11 @@
     <Content Include="src\resources\window-maximize-solid.png" />
     <Content Include="src\resources\window-restore-solid.png" />
     <Content Include="src\resources\xmark-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\forms\" />
+    <Folder Include="src\helpers\" />
+    <Folder Include="src\logic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
