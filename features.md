@@ -1,3 +1,5 @@
+# Features
+
 ## 🚀 Epic: View Minecraft Maps (Item Maps)
 
 ### ✅ User Story: As a user, I want to load my Minecraft worlds so the app can find the available item maps
