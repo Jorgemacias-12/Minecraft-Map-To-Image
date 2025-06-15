@@ -58,6 +58,44 @@ NBTMap Explorer is a desktop application designed to help users explore and expo
 - Rendering bugs or incorrect map scaling could confuse users
 - Dependencies on system fonts or external image libraries may need fallback handling.
 
+## Technical Overview
+
+### Architecture
+
+The application will follow the **MVVM (Model-View-ViewModel)** pattern, ensuring a clean separation of UI, logic, and data layers. The startup flow will be handled by a splash screen window, which will orchestrate the detection of Minecraft installations and guide the user to the correct entry point (e.g., selection dialogs or main window).
+
+### Design Patterns
+
+| Name          | Description                                                                                                                                |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Singleton** | For services or managers that should maintain a single instance across the application lifecycle (e.g., configuration or state managers).  |
+| **Strategy**  | To define interchangeable algorithms or behaviors, such as loading and parsing logic depending on the Minecraft edition (Java or Bedrock). |
+| **(Planned)**             | *(Future patterns like Adapter or Factory could be considered if the complexity grows.)*                                                   |
+
+### Tech Stack
+
+- **Language**: C# (.NET)
+- **UI Framework**: WPF (XAML-based)
+- **Architecture Pattern**: MVVM
+- **Tools**:
+  - Visual Studio
+  - XAML Designer
+  - NuGet packages as needed (e.g., Newtonsoft.Json)
+- **Additional Assets**:
+  - Custom font: *Monocraft*
+  - Custom themes via `ResourceDictionary`
+
+### Testing
+
+Initial testing will be manual with planned unit test coverage for:
+
+- Minecraft installation detection logic
+- Edition selection behavior
+- Configuration path validation
+- Strategy behavior based on edition
+
+Future iterations may include UI testing or automated integration tests depending on stability and complexity.
+
 ## Acknowledgments
 
 This project was inspired by [Shokuno](https://github.com/Shokuno), who originally created a similar tool in Java. This version builds upon that idea using C# and WPF, aiming to provide an improved user experience and additional features.
