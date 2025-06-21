@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36203.30 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NBTMap-Explorer", "NBTMap-Explorer\NBTMap-Explorer.csproj", "{6D30E712-39BC-4EA8-A353-20D8C87A3759}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{24A8DF1D-0C6A-4293-867C-F1F6E80F69A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6D30E712-39BC-4EA8-A353-20D8C87A3759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D30E712-39BC-4EA8-A353-20D8C87A3759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D30E712-39BC-4EA8-A353-20D8C87A3759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24A8DF1D-0C6A-4293-867C-F1F6E80F69A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24A8DF1D-0C6A-4293-867C-F1F6E80F69A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24A8DF1D-0C6A-4293-867C-F1F6E80F69A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24A8DF1D-0C6A-4293-867C-F1F6E80F69A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
