@@ -22,5 +22,17 @@ namespace NBTMap_Explorer.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CustomMinecraftPath {
+            get {
+                return ((string)(this["CustomMinecraftPath"]));
+            }
+            set {
+                this["CustomMinecraftPath"] = value;
+            }
+        }
     }
 }

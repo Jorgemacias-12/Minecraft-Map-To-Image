@@ -42,6 +42,10 @@ namespace NBTMap_Explorer.Services
             }
         }
 
+        public static bool IsCustomMinecraftJavaEditionPathSet()
+        {
+            return !string.IsNullOrEmpty(CustomMinecraftJavaEditionPath) && Directory.Exists(CustomMinecraftJavaEditionPath);
+        }
 
     }
 }
