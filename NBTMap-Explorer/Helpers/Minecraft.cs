@@ -37,5 +37,7 @@ namespace NBTMap_Explorer.Helpers
                                                                                   "games",
                                                                                   "com.mojang",
                                                                                   "minecraftWorlds");
+
+        public const int MAP_BYTE_SIZE = 16384;
     }
 }
