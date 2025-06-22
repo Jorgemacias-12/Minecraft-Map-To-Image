@@ -5,9 +5,9 @@ namespace NBTMap_Explorer.Models
 {
     public class MinecraftMap
     {
-        public string Name { get; set; }
-        public string Path { get; set; }
-        public string Dimension { get; set; }
+        public required string Name { get; set; }
+        public required string Path { get; set; }
+        public required string Dimension { get; set; }
         public byte Locked { get; set; }
         public byte Scale { get; set; }
         public byte TrackingPosition { get; set; }
