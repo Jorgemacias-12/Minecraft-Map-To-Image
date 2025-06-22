@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using NBTMap_Explorer.Helpers;
+using NBTMap_Explorer.Config;
 
 namespace NBTMap_Explorer.Services
 {
@@ -44,7 +45,7 @@ namespace NBTMap_Explorer.Services
 
         public static bool IsCustomMinecraftJavaEditionPathSet()
         {
-            return !string.IsNullOrEmpty(CustomMinecraftJavaEditionPath) && Directory.Exists(CustomMinecraftJavaEditionPath);
+            return !string.IsNullOrEmpty(PreferencesManager.CustomMinecraftJavaEditionPath) && Directory.Exists(PreferencesManager.CustomMinecraftJavaEditionPath);
         }
 
     }
