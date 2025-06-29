@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="Principal100">#F7F0FD</Color>
+    <Color x:Key="Principal200">#F2E8FC</Color>
+    <Color x:Key="Principal300">#E5D0F9</Color>
+    <Color x:Key="Principal400">#AB68EB</Color>
+    <Color x:Key="Principal500">#9A5ED4</Color>
+    <Color x:Key="Principal600">#8953BC</Color>
+    <Color x:Key="Principal700">#804EB0</Color>
+    <Color x:Key="Principal800">#673E8D</Color>
+    <Color x:Key="Principal900">#4D2F6A</Color>
+    <Color x:Key="Principal950">#3C2452</Color>
+
+    <Color x:Key="Secondary100">#EEF1F8</Color>
+    <Color x:Key="Secondary200">#D9EBF4</Color>
+    <Color x:Key="Secondary300">#B0D5E8</Color>
+    <Color x:Key="Secondary400">#0077B6</Color>
+    <Color x:Key="Secondary500">#006BA4</Color>
+    <Color x:Key="Secondary600">#005F92</Color>
+    <Color x:Key="Secondary700">#005989</Color>
+    <Color x:Key="Secondary800">#00476D</Color>
+    <Color x:Key="Secondary900">#003652</Color>
+    <Color x:Key="Secondary950">#002A40</Color>
+
+    <Color x:Key="Accent100">#EDF7FF</Color>
+    <Color x:Key="Accent200">#E3F4FF</Color>
+    <Color x:Key="Accent300">#C6E7FF</Color>
+    <Color x:Key="Accent400">#47B3FF</Color>
+    <Color x:Key="Accent500">#40A1E6</Color>
+    <Color x:Key="Accent600">#398FCC</Color>
+    <Color x:Key="Accent700">#3586BF</Color>
+    <Color x:Key="Accent800">#2B6B99</Color>
+    <Color x:Key="Accent900">#205173</Color>
+    <Color x:Key="Accent950">#193F59</Color>
+
+    <Color x:Key="Error100">#FBEDED</Color>
+    <Color x:Key="Error200">#F9E3E4</Color>
+    <Color x:Key="Error300">#F3C6C7</Color>
+    <Color x:Key="Error400">#D8464B</Color>
+    <Color x:Key="Error500">#C23F44</Color>
+    <Color x:Key="Error600">#AD383C</Color>
+    <Color x:Key="Error700">#A23538</Color>
+    <Color x:Key="Error800">#822A2D</Color>
+    <Color x:Key="Error900">#611F22</Color>
+    <Color x:Key="Error950">#4C191A</Color>
+
+    <Color x:Key="Gray100">#E8E8E8</Color>
+    <Color x:Key="Gray200">#DCDCDD</Color>
+    <Color x:Key="Gray300">#C4C5C6</Color>
+    <Color x:Key="Gray400">#B6B7B8</Color>
+    <Color x:Key="Gray500">#959698</Color>
+    <Color x:Key="Gray600">#66686A</Color>
+    <Color x:Key="Gray700">#535557</Color>
+    <Color x:Key="Gray800">#37393C</Color>
+    <Color x:Key="Gray850">#303235</Color>
+    <Color x:Key="Gray900">#27292B</Color>
+    <Color x:Key="Gray950">#141619</Color>
+
+    <Color x:Key="White">#FFFFFF</Color>
+    <Color x:Key="Black">#000000</Color>
+    <Color x:Key="DarkestBackground">#070809</Color>
+</ResourceDictionary>
