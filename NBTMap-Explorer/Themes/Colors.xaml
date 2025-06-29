@@ -1,43 +1,44 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- Escala Primaria (Morado) -->
     <Color x:Key="Primary50">#F7F0FD</Color>
     <Color x:Key="Primary100">#F2E8FC</Color>
     <Color x:Key="Primary200">#E5D0F9</Color>
     <Color x:Key="Primary300">#D8B8F6</Color>
     <Color x:Key="Primary400">#CBA1F3</Color>
-    <Color x:Key="Primary500">#AB68EB</Color>  <!-- Color base -->
+    <Color x:Key="Primary500">#AB68EB</Color>
     <Color x:Key="Primary600">#8A5ED4</Color>
     <Color x:Key="Primary700">#8953BC</Color>
     <Color x:Key="Primary800">#804EB0</Color>
     <Color x:Key="Primary900">#4D2F6A</Color>
 
-    <!-- Escala Secundaria (Azul) -->
-    <Color x:Key="Secondary50">#E6F4FA</Color>
-    <Color x:Key="Secondary100">#B0D5E8</Color>
-    <Color x:Key="Secondary200">#8AC1E0</Color>
-    <Color x:Key="Secondary300">#5CA8D5</Color>
-    <Color x:Key="Secondary400">#2E8FD0</Color>
-    <Color x:Key="Secondary500">#005F92</Color>  <!-- Color base -->
-    <Color x:Key="Secondary600">#004F7A</Color>
-    <Color x:Key="Secondary700">#003652</Color>
-    <Color x:Key="Secondary800">#002A40</Color>
-    <Color x:Key="Secondary900">#001C2A</Color>
-
-    <!-- Escala de Grises -->
-    <Color x:Key="Gray50">#FFFFFF</Color>
-    <Color x:Key="Gray100">#F9F9F9</Color>
-    <Color x:Key="Gray200">#F2F2F2</Color>
-    <Color x:Key="Gray300">#E0E0E0</Color>
-    <Color x:Key="Gray400">#D6D6D6</Color>
-    <Color x:Key="Gray500">#C1C1C1</Color>
-    <Color x:Key="Gray600">#ABABAB</Color>
-    <Color x:Key="Gray700">#808080</Color>
-    <Color x:Key="Gray800">#606060</Color>
-    <Color x:Key="Gray900">#4B4B4B</Color>
-
-    <!-- Estados -->
+    <Color x:Key="Success50">#EAF8EC</Color>
+    <Color x:Key="Success100">#E0F4E2</Color>
+    <Color x:Key="Success200">#BFE8C3</Color>
+    <Color x:Key="Success300">#8FD995</Color>
+    <Color x:Key="Success400">#5ECA66</Color>
     <Color x:Key="Success500">#2FB83D</Color>
-    <Color x:Key="Error500">#D8484B</Color>
-    <Color x:Key="Warning500">#FDDD0D</Color>
+    <Color x:Key="Success600">#2AA437</Color>
+    <Color x:Key="Success700">#269231</Color>
+    <Color x:Key="Success800">#23892E</Color>
+    <Color x:Key="Success900">#104015</Color>
+
+    <Color x:Key="Error50">#FBEDED</Color>
+    <Color x:Key="Error100">#F9E3E3</Color>
+    <Color x:Key="Error200">#F3C6C6</Color>
+    <Color x:Key="Error300">#E58F8F</Color>
+    <Color x:Key="Error400">#D8484B</Color>
+    <Color x:Key="Error500">#C23438</Color>
+    <Color x:Key="Error600">#AD383C</Color>
+    <Color x:Key="Error700">#A23538</Color>
+    <Color x:Key="Error800">#4C191A</Color>
+
+    <Color x:Key="Warning50">#FFFCE7</Color>
+    <Color x:Key="Warning100">#FFFAE3</Color>
+    <Color x:Key="Warning200">#FEF4B4</Color>
+    <Color x:Key="Warning300">#FDEB7E</Color>
+    <Color x:Key="Warning400">#FDDD0D</Color>
+    <Color x:Key="Warning500">#E4C70C</Color>
+    <Color x:Key="Warning600">#CAB10A</Color>
+    <Color x:Key="Warning700">#BEA60A</Color>
+    <Color x:Key="Warning800">#594D05</Color>
 </ResourceDictionary>
